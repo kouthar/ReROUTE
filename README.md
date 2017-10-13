@@ -30,4 +30,4 @@ Features we intend to add:
 
 # Acknowledgements
 
-We would like to thank THacks for this amazing opportunity for us to learn and grow by developing this project.
+We would like to thank THacks, the Toronto Hacker Club, and the University of Toronto for thisopportunity for us to learn and grow through developing this project.
