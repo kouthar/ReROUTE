@@ -1,17 +1,36 @@
-Features
-
 Train
 Variables
+- Coordinates of trains
+- Number of trains and their identities
+- Route (which route the train is on)
 
 Methods
+- Speed, acceleration, distance to stop, brake acceleration based on passenger count
+  - calculated using physical equations
+- capacity/passenger count
 
 Station
 Variables
+- Number of stations and their identities
 
 Methods
+- Stop time @ station based on inflow and outflow
+- inflow/outflow (number of people getting on and getting off at said station)
 
 Route
 Variables
+- holds objects of trains and stations and manages them
+- coordinates of route itself
 
 Methods
+
+- using math to use coordinates as measurements to do distance calculations
+- 2D, beginning with straight line route to start off and expand upon
+- get - distanceTraveled, time, ETA, schedule, distanceToStation
+
+GUI
+- animated representation of trains and the ATC model
+- accelerated time for longer period shown
+- using JFrame and Swing
+
 
