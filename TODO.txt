@@ -1,3 +1,5 @@
+Features
+
 # Train
 Variables
 - Coordinates of trains
@@ -30,7 +32,7 @@ Methods
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
 
 
-# GUI
+# GUI 
 - animated representation of trains and the ATC model
 - accelerated time for longer period shown
 - using JFrame and Swing
