@@ -1,8 +1,17 @@
 Features
 
 Train
+Variables
+
+Methods
 
 Station
+Variables
+
+Methods
 
 Route
+Variables
+
+Methods
 
