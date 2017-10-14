@@ -1,7 +1,7 @@
 Features
 
-# Train
-Variables
+# Train (implements Coordinate)
+Fields
 - Coordinates of trains
 - Number of trains and their identities
 - Route (which route the train is on)
@@ -12,8 +12,8 @@ Methods
   - calculated using physical equations
 
 
-# Station
-Variables
+# Station (implements Coordinate)
+Fields
 - Number of stations and their identities
 
 Methods
@@ -22,7 +22,7 @@ Methods
 
 
 # Route
-Variables
+Fields
 - holds objects of trains and stations and manages them
 - coordinates of route itself
 
@@ -32,9 +32,28 @@ Methods
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
 
 
+# Person (implements Coordinate)
+Fields
+- stations boarded & alighted
+- name (for fun)
+- id
+
+Methods
+- distance travelled
+
+
+# Coordinate (interface)
+Fields
+- x & y coordinates
+
+Methods
+- calculate distance from one coordinate to aother
+
+
 # GUI 
 - animated representation of trains and the ATC model
 - accelerated time for longer period shown
 - using JFrame and Swing
+- sprites of train (scaled down but same dimensions) & passenger (same ratio)
 
 
