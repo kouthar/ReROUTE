@@ -1,8 +1,59 @@
 Features
 
-Train
+# Train (implements Coordinate)
+Fields
+- Coordinates of trains
+- Number of trains and their identities
+- Route (which route the train is on)
+- capacity/passenger count
 
-Station
+Methods
+- Speed, acceleration, distance to stop, brake acceleration based on passenger count
+  - calculated using physical equations
 
-Route
+
+# Station (implements Coordinate)
+Fields
+- Number of stations and their identities
+
+Methods
+- Stop time @ station based on inflow and outflow
+- inflow/outflow (number of people getting on and getting off at said station)
+
+
+# Route
+Fields
+- holds objects of trains and stations and manages them
+- coordinates of route itself
+
+Methods
+- using math to use coordinates as measurements to do distance calculations
+- 2D, beginning with straight line route to start off and expand upon
+- get - distanceTraveled, time, ETA, schedule, distanceToStation
+
+
+# Person (implements Coordinate)
+Fields
+- stations boarded & alighted
+- name (for fun)
+- id
+
+Methods
+- distance travelled
+
+
+# Coordinate (interface)
+Fields
+- x & y coordinates
+
+Methods
+- calculate distance from one coordinate to aother
+
+
+# GUI 
+- animated representation of trains and the ATC model
+- accelerated time for longer period shown
+- using JFrame and Swing
+- sprites of train (scaled down but same dimensions) & passenger (same ratio)
+
 
