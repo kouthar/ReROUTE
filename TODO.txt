@@ -1,24 +1,37 @@
 Features
 
+# Coordinate (interface)
+Fields
+- double x: x coordinate of this object
+- double y: y coordinate of this object
+Methods
+- public double distanceTo(Coordinate other): return the distance from this object to other
+
+
 # Train (implements Coordinate)
 Fields
-- Coordinates of trains
-- Number of trains and their identities
-- Route (which route the train is on)
-- capacity/passenger count
-
+- private static final double ACCELERATION: the acceleration of trains
+- double x: x coordinate of this object
+- double y: y coordinate of this object
+- private int id: id of this train
+- private int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed)
+- private int numPassengers: number of passengers onboard
+- private double speed: speed of this train right now
 Methods
-- Speed, acceleration, distance to stop, brake acceleration based on passenger count
-  - calculated using physical equations
+- accessors & mutators 
 
 
 # Station (implements Coordinate)
 Fields
-- Number of stations and their identities
-
+- double x: x coordinate of this object
+- double y: y coordinate of this object
+- private int[] inflow: the minimum and maximum inflow
+- private int[] outflow: the minimum and maximum outflow
+- private String name: name of this station
+- private String id: id of this station
 Methods
-- Stop time @ station based on inflow and outflow
-- inflow/outflow (number of people getting on and getting off at said station)
+- accessors & mutators
+- public double 
 
 
 # Route
@@ -41,13 +54,6 @@ Fields
 Methods
 - distance travelled
 
-
-# Coordinate (interface)
-Fields
-- x & y coordinates
-
-Methods
-- calculate distance from one coordinate to aother
 
 
 # GUI 
