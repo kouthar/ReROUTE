@@ -1,0 +1,13 @@
+The coordinate system we are using is rather unconventional in that it is one dimensional.
+
+We made this decision for a few reasons:
+
+i) Trains follow a single path so we only need a one dimensional value to store any trains location
+ii) Extra data only complicates calculations etc. while adding very little in terms of actual benefits (for our purposes)
+ii) Having a single value rather than a 2d vector makes locating trains on the track simpler
+iv) Potential off track errors where the horizontal location of a train is incorrect are avoided
+
+So what does this system look like for Toronto's Line 1 Subway?
+
+Since this line is 30.2 km long we define all locations l as being in the range -30200 <= l < 30200.
+Note we use 30200 (the meters) for improved granularity needed to accurately simulate train movements. 
