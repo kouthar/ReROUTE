@@ -2,8 +2,7 @@ Features
 
 # Coordinate (interface)
 Fields
-+ double x: x coordinate of this object
-+ double y: y coordinate of this object
++ double pos: position of the object, from -30200 to 30200
 Methods
 + double distanceTo(Coordinate other): return the distance from this object to other
 
@@ -11,30 +10,34 @@ Methods
 # Train (implements Coordinate)
 Fields
 - static final double ACCELERATION: the acceleration of trains
-+ double x: x coordinate of this object
-+ double y: y coordinate of this object
++ double pos: position of the object, from -30200 to 30200
 - int id: id of this train
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed)
 - int numPassengers: number of passengers onboard
 - double speed: speed of this train right now
-- Terminal terminal: The terminal station this train is heading to
+- Station nextStation: the next station the train is heading towards
 Methods
-+ accessors & mutators 
++ accessors & mutators
++ double distanceToStation(): returns the distance to the next station
++ double distanceToTerminus(): returns the distance to the terminal station
++ int timeToStation(): returns the time, in seconds, to the next station
 
 
 # Station (implements Coordinate)
 Fields
-+ double x: x coordinate of this object
-+ double y: y coordinate of this object
++ double pos: position of the object, from -30200 to 30200
 - int[] inflowRange: the minimum and maximum inflow
 - int[] outflowRange: the minimum and maximum outflow
 - String name: name of this station
 - String id: id of this station
+- Station nextStation: next station on the route, towards the positive direction
+- Station previousStation: previous station on the route, backwards on the positive direction
 Methods
 + accessors & mutators
 + double getTrainStopTime(): returns the stop time of each train at this station, depending on inflow & outflow
 - int getInflow(): returns the inflow at this station
 - int getOutflow(): returns the outflow at this station
+
 
 
 # Terminus (extends Station)
@@ -59,11 +62,9 @@ Fields
 - Station[] stations: list of stations on this route
 Methods
 + accessors & mutators
-+ Station nextStation(int trainID): returns the next station on the route
-+ Station lastStation(int trainID): returns the last station on the route
-+ double distanceFromStation(Train train, Station station): returns the distance between train and station
-- using math to use coordinates as measurements to do distance calculations
-- 2D, beginning with straight line route to start off and expand upon
++ Station getNextStation(Train train): returns the next station on the route
++ Station getPreviousStation(Train train): returns the last station on the route
+
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
 
 
