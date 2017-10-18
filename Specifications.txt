@@ -1,0 +1,92 @@
+Features
+
+# Coordinate (interface)
+Fields
++ double x: x coordinate of this object
++ double y: y coordinate of this object
+Methods
++ double distanceTo(Coordinate other): return the distance from this object to other
+
+
+# Train (implements Coordinate)
+Fields
+- static final double ACCELERATION: the acceleration of trains
++ double x: x coordinate of this object
++ double y: y coordinate of this object
+- int id: id of this train
+- int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed)
+- int numPassengers: number of passengers onboard
+- double speed: speed of this train right now
+- Terminal terminal: The terminal station this train is heading to
+Methods
++ accessors & mutators 
+
+
+# Station (implements Coordinate)
+Fields
++ double x: x coordinate of this object
++ double y: y coordinate of this object
+- int[] inflowRange: the minimum and maximum inflow
+- int[] outflowRange: the minimum and maximum outflow
+- String name: name of this station
+- String id: id of this station
+Methods
++ accessors & mutators
++ double getTrainStopTime(): returns the stop time of each train at this station, depending on inflow & outflow
+- int getInflow(): returns the inflow at this station
+- int getOutflow(): returns the outflow at this station
+
+
+# Terminus (extends Station)
+Fields
+Methods
+- int getOutflow(): returns -1 to signify that all passengers get off at this terminus
+
+
+# Depot (extends Station)
+Fields
+- int storage: number of trains stored at this depot
+- final int capacity: maximum number of trains that can be stored at this depot
+Methods
++ accessors & mutators
++ void sendTrain(): updates the storage for a train departure
++ void receiveTrain(): updates the storage for a train arrival
+
+
+# Route
+Fields
+- ArrayList<Train> trains: list of trains on this route
+- Station[] stations: list of stations on this route
+Methods
++ accessors & mutators
++ Station nextStation(int trainID): returns the next station on the route
++ Station lastStation(int trainID): returns the last station on the route
++ double distanceFromStation(Train train, Station station): returns the distance between train and station
+- using math to use coordinates as measurements to do distance calculations
+- 2D, beginning with straight line route to start off and expand upon
+- get - distanceTraveled, time, ETA, schedule, distanceToStation
+
+
+# Person (implements Coordinate)
+Fields
+- stations boarded & alighted
+- name (for fun)
+- id
+Methods
+- distance travelled
+
+
+# Control
+Fields
+- Route[] routes: list of routes in this metro system
+Methods
++ void main(String[] args)
+
+
+# GUI 
+- animated representation of trains and the ATC model
+- accelerated time for longer period shown
+- using JFrame and Swing
+- sprites of train (scaled down but same dimensions) & passenger (same ratio)
+
+
