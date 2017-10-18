@@ -68,11 +68,14 @@ Methods
 
 # Person (implements Coordinate)
 Fields
-- stations boarded & alighted
-- name (for fun)
-- id
+- Station stationBoarded: the station where this person boarded
+- Station stationAlighted: the station where this person alighted
+- Train train: the train this person is on
+- String name: this person's name
+- int id: this person's id
 Methods
-- distance travelled
++ accessors & mutators
++ double getDistanceTravelled: returns the distance this person has travelled so far
 
 
 # Control
