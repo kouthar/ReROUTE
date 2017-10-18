@@ -39,7 +39,6 @@ Methods
 - int getOutflow(): returns the outflow at this station
 
 
-
 # Terminus (extends Station)
 Fields
 Methods
@@ -64,7 +63,6 @@ Methods
 + accessors & mutators
 + Station getNextStation(Train train): returns the next station on the route
 + Station getPreviousStation(Train train): returns the last station on the route
-
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
 
 
