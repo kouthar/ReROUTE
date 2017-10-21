@@ -65,11 +65,13 @@ public class Train extends GUIObject {
         return BASE_MAX_SPEED - (CRUSH_CAPACITY - CAPACITY)/30;
     }
 
-    double distanceToStation()
+    public double distanceToNextStation()
 
-    double distanceToTerminus()
+    public double distanceToStation()
 
-    int timeToStation()
+    public double distanceToTerminus()
+
+    public int timeToStation()
 
 
 
