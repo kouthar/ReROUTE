@@ -4,7 +4,7 @@ Features
 Fields
 + double pos: position of the object, from -30200 to 30200 DONE
 Methods
-+ double distanceTo(Coordinate other): return the distance from this object to other DONE
++ double distanceTo(GUIObject other): return the distance from this object to other DONE
 + GUI stuff
 
 
@@ -86,10 +86,9 @@ Methods
 + void main(String[] args)
 
 
-# GUI 
+# ReRouteInterface
 - animated representation of trains and the ATC model
 - accelerated time for longer period shown
 - using JFrame and Swing
 - sprites of train (scaled down but same dimensions) & passenger (same ratio)
-
 
