@@ -1,20 +1,30 @@
-public class Train extends Coordinate{
+public class Train extends Coordinate {
 
     private int id;
 
-    /** The safe train capacity */
-    private final int capacity;
+    /**
+     * The safe train capacity
+     */
+    private final static int CAPACITY = 1500;
 
-    /** The max capacity, will detriment max speed */
-    private final int crushCapacity;
+    /**
+     * The max capacity, will detriment max speed
+     */
+    private final static int CRUSH_CAPACITY = 1800;
 
-    /** The max speed when capacity is not exceeded */
+    /**
+     * The max speed when capacity is not exceeded
+     */
     private int baseMaxSpeed;
 
-    /** The maximum acceleration */
+    /**
+     * The maximum acceleration
+     */
     private final int maxAccel;
 
-    /** The maximum deceleration */
+    /**
+     * The maximum deceleration
+     */
     private final int maxDecel;
 
 }
