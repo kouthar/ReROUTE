@@ -28,6 +28,14 @@ public class Train extends GUIObject {
      */
     private final static int MAX_DECEL = 2;
 
+    public int getCurLoad() {
+        return curLoad;
+    }
+
+    public void setCurLoad(int curLoad) {
+        this.curLoad = curLoad;
+    }
+
     /**
      * The current passenger load
      */
