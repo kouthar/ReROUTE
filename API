@@ -2,9 +2,10 @@ Features
 
 # GUIObject
 Fields
-+ double pos: position of the object, from -30200 to 30200
++ double pos: position of the object, from -30200 to 30200 DONE
 Methods
-+ double distanceTo(Coordinate other): return the distance from this object to other
++ double distanceTo(Coordinate other): return the distance from this object to other DONE
++ GUI stuff
 
 
 # Train (extends GUIObject)
