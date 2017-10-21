@@ -36,4 +36,13 @@ public class Person {
 	 public String getName() {
 		 return name;
 	 }
+	
+	public void setID(int id) {
+		 this.id = id;
+	 }
+	 
+	 public int getID() {
+		 return id;
+	 }
+	
 	}
