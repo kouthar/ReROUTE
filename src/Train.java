@@ -1,5 +1,7 @@
 public class Train extends Coordinate{
 
+    private int id;
+
     /** The safe train capacity */
     private final int capacity;
 

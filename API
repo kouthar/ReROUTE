@@ -11,7 +11,7 @@ Methods
 Fields
 - static final double ACCELERATION: the acceleration of trains DONE
 + double pos: position of the object, from -30200 to 30200
-- int id: id of this train
+- int id: id of this train DONE
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
 - int numPassengers: number of passengers onboard DONE
 - double speed: speed of this train right now DONE
