@@ -1,0 +1,19 @@
+The coordinate system we are using is rather unconventional in that it is one dimensional.
+
+We made this decision for a few reasons:
+
+i) Trains follow a single path so we only need a one dimensional value to store any trains location
+ii) Extra data only complicates calculations etc. while adding very little in terms of actual benefits (for our purposes)
+ii) Having a single value rather than a 2d vector makes locating trains on the track simpler
+iv) Potential off track errors where the horizontal location of a train is incorrect are avoided
+
+So what does this system look like for Toronto's Line 1 Subway?
+
+Since this line is 30.2 km long we define all positions pos as being in the range -30200 <= pos < 30200.
+~We use 30200 (the meters) for improved granularity needed to accurately simulate train movements. 
+~The "end" of the line (in this case corresponding to Sheppard West Station) is located at pos = -30200, when any train reaches pos = 30200 they are instantly relocated to pos = -30200
+~Downsview Depot conviniently locates at pos = -30200
+~Since the line is 30.2 km on one pass from Sheppard West to Finch (the other terminus) our coordinate system actually covers double
+the possible range for one direction along the line, hence we let the negative coordinates refer to trains travelling on the track from
+(SHEPPARD WEST -> FINCH) and positive coordinates refer to trains travelling on the track back (FINCH -> SHEPPARD WEST)
+~This assumes Finch station is located at coordinate pos = 0
