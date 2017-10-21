@@ -68,6 +68,7 @@ Methods
 + Station getNextStation(Train train): returns the next station on the route
 + Station getPreviousStation(Train train): returns the last station on the route
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
++ ArrayList<Station> getStationsArrayList()
 
 
 # Person
