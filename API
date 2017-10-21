@@ -2,8 +2,11 @@ Features
 
 # GUIObject
 Fields
-+ double pos: position of the object, from -30200 to 30200 DONE
+- double pos: position of the object, from -30200 to 30200 DONE
 Methods
++ accessors & mutators
++ double getX(): return the horizontal coordinate in the GUI
++ double getY(): return the vertical coordinate in the GUI
 + double distanceTo(GUIObject other): return the distance from this object to other DONE
 + GUI stuff
 
@@ -11,8 +14,8 @@ Methods
 # Train (extends GUIObject)
 Fields
 - static final double ACCELERATION: the acceleration of trains DONE
-+ double pos: position of the object, from -30200 to 30200 (inherited from GUIObject) DONE
-- int id: id of this train DONE
++ double pos: position of the object, from -30200 to 30200
+- int id: id of this train
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
 - int numPassengers: number of passengers onboard DONE
 - double speed: speed of this train right now DONE
@@ -84,6 +87,10 @@ Fields
 - Route[] routes: list of routes in this metro system
 Methods
 + void main(String[] args)
+
+
+# Simulation
+- class for train system simulation
 
 
 # ReRouteInterface
