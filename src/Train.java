@@ -23,17 +23,17 @@ public class Train extends GUIObject {
     /**
      * The max speed when capacity is not exceeded in meters per second
      */
-    private final int BASE_MAX_SPEED = 24;
+    private final double BASE_MAX_SPEED = 24;
 
     /**
      * The maximum acceleration in meters per second squared
      */
-    private final static int MAX_ACCEL = 1;
+    private final static double MAX_ACCEL = 1;
 
     /**
      * The maximum deceleration in meters per second squared
      */
-    private final static int MAX_DECEL = 2;
+    private final static double MAX_DECEL = 2;
 
     public int getCurLoad() {
         return curLoad;
@@ -54,6 +54,12 @@ public class Train extends GUIObject {
         setCurLoad(0);
         setPos(0)
     }
+
+    public double getMaxSpeed(){
+        return BASE_MAX_SPEED - (CRUSH_CAPACITY - CAPACITY)/30;
+    }
+
+    
 
 
 
