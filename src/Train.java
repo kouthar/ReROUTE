@@ -77,7 +77,7 @@ public class Train extends GUIObject {
     }
 
     public void arriveAtNextStation(){
-
+        //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
     }
 
     /**
@@ -126,5 +126,16 @@ public class Train extends GUIObject {
         }
     }
 
+    public  void decelerate(){
+        //DECELERATES THE TRAIN
+    }
+
+    public void go(){
+        //DECIDES WHETHER TO ACCELERATE OR DECELERATE BASED ON STOPPING DISTANCE
+    }
+
+    public double getStoppingDistance(){
+        //CALCULATES THIS TRAINS STOPPING DISTANCE
+    }
 
 }
