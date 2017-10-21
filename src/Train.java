@@ -41,4 +41,11 @@ public class Train extends GUIObject {
      */
     private int curLoad;
 
+    public Train(){
+        trainNumber++;
+        id = trainNumber;
+        setCurLoad(0);
+        setPos(0)
+    }
+
 }
