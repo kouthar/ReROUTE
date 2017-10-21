@@ -10,6 +10,8 @@ public class Train extends GUIObject {
 
     private static int trainNumber = 0;
 
+    private Station nextStation;
+
     /**
      * The safe train capacity
      */
@@ -19,11 +21,6 @@ public class Train extends GUIObject {
      * The max capacity, will detriment max speed
      */
     private final static int CRUSH_CAPACITY = 1800;
-
-    /**
-     * The max speed when capacity is not exceeded in meters per second
-     */
-    private final double BASE_MAX_SPEED = 24;
 
     /**
      * The maximum acceleration in meters per second squared
@@ -52,14 +49,23 @@ public class Train extends GUIObject {
         trainNumber++;
         int id = trainNumber;
         setCurLoad(0);
-        setPos(0)
+        setPos(0);
+        ArrayList<Station> stations = Route.getStations();
     }
 
     public double getMaxSpeed(){
+        /*
+      The max speed when capacity is not exceeded in meters per second
+     */
+        double BASE_MAX_SPEED = 24;
         return BASE_MAX_SPEED - (CRUSH_CAPACITY - CAPACITY)/30;
     }
 
-    
+
+
+
+
+
 
 
 

@@ -19,7 +19,7 @@ Fields
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
 - int numPassengers: number of passengers onboard DONE
 - double speed: speed of this train right now DONE
-- Station nextStation: the next station the train is heading towards
+- Station nextStation: the next station the train is heading towards DONE
 Methods
 + accessors & mutators
 + double distanceToStation(): returns the distance to the next station
