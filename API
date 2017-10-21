@@ -19,7 +19,7 @@ Fields
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
 - int numPassengers: number of passengers onboard DONE
 - double speed: speed of this train right now DONE
-- Station nextStation: the next station the train is heading towards DONE
+- Station nextStation: the next station the train is heading towards
 Methods
 + accessors & mutators
 + double distanceToStation(): returns the distance to the next station
@@ -68,7 +68,7 @@ Methods
 + Station getNextStation(Train train): returns the next station on the route
 + Station getPreviousStation(Train train): returns the last station on the route
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
-+ ArrayList<Station> getStationsArrayList()
++ ArrayList<Station> getStationsArrayList(): returns a copy of stations
 
 
 # Person
@@ -99,4 +99,5 @@ Methods
 - accelerated time for longer period shown
 - using JFrame and Swing
 - sprites of train (scaled down but same dimensions) & passenger (same ratio)
+
 
