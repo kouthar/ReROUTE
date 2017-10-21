@@ -11,7 +11,7 @@ Methods
 + GUI stuff
 
 
-# Train (extends GUIObject)
+# Train (extends GUIObject) DONE
 Fields
 - static final double ACCELERATION: the acceleration of trains DONE
 + double pos: position of the object, from -30200 to 30200
