@@ -1,17 +1,17 @@
 Features
 
-# Coordinate (interface)
+# GUIObject
 Fields
 + double pos: position of the object, from -30200 to 30200
 Methods
 + double distanceTo(Coordinate other): return the distance from this object to other
 
 
-# Train (implements Coordinate)
+# Train (extends GUIObject)
 Fields
 - static final double ACCELERATION: the acceleration of trains DONE
 + double pos: position of the object, from -30200 to 30200
-- int id: id of this train DONE
+- int id: id of this train
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
 - int numPassengers: number of passengers onboard DONE
 - double speed: speed of this train right now DONE
@@ -23,7 +23,7 @@ Methods
 + int timeToStation(): returns the time, in seconds, to the next station
 
 
-# Station (implements Coordinate)
+# Station (extends GUIObject)
 Fields
 + double pos: position of the object, from -30200 to 30200
 - int[] inflowRange: the minimum and maximum inflow
@@ -66,7 +66,7 @@ Methods
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
 
 
-# Person (implements Coordinate)
+# Person
 Fields
 - Station stationBoarded: the station where this person boarded
 - Station stationAlighted: the station where this person alighted
