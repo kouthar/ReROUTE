@@ -53,6 +53,10 @@ public class Train extends GUIObject {
         ArrayList<Station> stations = Route.getStations();
     }
 
+    /**
+     *
+     * @return double representing the max speed dependent on passengers
+     */
     public double getMaxSpeed(){
         /*
       The max speed when capacity is not exceeded in meters per second
@@ -60,6 +64,13 @@ public class Train extends GUIObject {
         double BASE_MAX_SPEED = 24;
         return BASE_MAX_SPEED - (CRUSH_CAPACITY - CAPACITY)/30;
     }
+
+    double distanceToStation()
+
+    double distanceToTerminus()
+
+    int timeToStation()
+
 
 
 
