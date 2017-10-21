@@ -9,12 +9,12 @@ Methods
 
 # Train (implements Coordinate)
 Fields
-- static final double ACCELERATION: the acceleration of trains
+- static final double ACCELERATION: the acceleration of trains DONE
 + double pos: position of the object, from -30200 to 30200
 - int id: id of this train
-- int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed)
-- int numPassengers: number of passengers onboard
-- double speed: speed of this train right now
+- int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
+- int numPassengers: number of passengers onboard DONE
+- double speed: speed of this train right now DONE
 - Station nextStation: the next station the train is heading towards
 Methods
 + accessors & mutators
