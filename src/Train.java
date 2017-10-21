@@ -1,4 +1,4 @@
-public class Train extends Coordinate{
+public class Train extends GUIObject {
 
     /** The safe train capacity */
     private final int capacity;

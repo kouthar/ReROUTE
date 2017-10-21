@@ -1,2 +1,2 @@
-public class Depot {
+public class Depot extends Station{
 }
