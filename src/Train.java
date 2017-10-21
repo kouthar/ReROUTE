@@ -47,6 +47,13 @@ public class Train extends GUIObject {
      */
     private int curLoad;
 
+    public void setCurSpeed(int curSpeed) {
+        this.curSpeed = curSpeed;
+    }
+
+    /**
+     * The current speed
+     */
     private int curSpeed;
 
     public Train(){
@@ -73,19 +80,51 @@ public class Train extends GUIObject {
 
     }
 
+    /**
+     *
+     * @return double representing the distance to the next station in meters
+     */
     public double distanceToNextStation(){
         return super.distanceTo(stations.get(0));
     }
 
+    /**
+     *
+     * @param s the station we want the distance to
+     * @return double representing the distance to station s
+     */
     public double distanceToStation(station s){
         return super.distanceTo(s);
     }
 
+    /**
+     *
+     * @return double representing the distance to the terminus station in meters
+     */
     public double distanceToTerminus(){
         return super.distanceTo(stations.get(stations.size() - 1));
     }
 
+    /**
+     *
+     * @return int representing the number of seconds until arrival at the next station
+     */
     public int timeToNextStation(){
-        distanceToNextStation() /
+        distanceToNextStation() / curSpeed;
     }
+
+    /**
+     *  Accelerate this train until the max speed has been reached.
+     */
+    public void accelerate(){
+        if(curSpeed < this.getMaxSpeed()){
+            if(curSpeed + MAX_ACCEL <= this.getMaxSpeed()){
+                curSpeed = curSpeed + MAX_ACCEL;
+            }else{
+                curSpeed = this.getMaxSpeed();
+            }
+        }
+    }
+
+
 }
