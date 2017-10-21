@@ -1,18 +1,44 @@
-public class Train extends Coordinate{
+public class Train extends GUIObject {
 
-    /** The safe train capacity */
-    private final int capacity;
+    private static int trainNumber = 0;
+    private int id;
 
-    /** The max capacity, will detriment max speed */
-    private final int crushCapacity;
+    /**
+     * The safe train capacity
+     */
+    private final static int CAPACITY = 1500;
 
-    /** The max speed when capacity is not exceeded */
-    private int baseMaxSpeed;
+    /**
+     * The max capacity, will detriment max speed
+     */
+    private final static int CRUSH_CAPACITY = 1800;
 
-    /** The maximum acceleration */
-    private final int maxAccel;
+    /**
+     * The max speed when capacity is not exceeded in meters per second
+     */
+    private final int BASE_MAX_SPEED = 24;
 
-    /** The maximum deceleration */
-    private final int maxDecel;
+    /**
+     * The maximum acceleration in meters per second squared
+     */
+    private final static int MAX_ACCEL = 1;
+
+    /**
+     * The maximum deceleration in meters per second squared
+     */
+    private final static int MAX_DECEL = 2;
+
+    public int getCurLoad() {
+        return curLoad;
+    }
+
+    public void setCurLoad(int curLoad) {
+        this.curLoad = curLoad;
+    }
+
+    /**
+     * The current passenger load
+     */
+    private int curLoad;
 
 }

@@ -1,2 +1,2 @@
-public class Terminus {
+public class Terminus extends Station{
 }

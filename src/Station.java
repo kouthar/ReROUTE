@@ -1,3 +1,3 @@
-public class Station{
+public class Station extends GUIObject {
 
 }
