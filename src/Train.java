@@ -10,6 +10,8 @@ public class Train extends GUIObject {
 
     private static int trainNumber = 0;
 
+    private ArrayList<Person> manifest = new ArrayList<Person>();
+    private ArrayList<Station> stations = new ArrayList<Station>();
     private Station nextStation;
 
     /**
@@ -25,12 +27,12 @@ public class Train extends GUIObject {
     /**
      * The maximum acceleration in meters per second squared
      */
-    private final static double MAX_ACCEL = 1;
+    private final static double MAX_ACCEL = 0.9;
 
     /**
      * The maximum deceleration in meters per second squared
      */
-    private final static double MAX_DECEL = 2;
+    private final static double MAX_DECEL = 1.4;
 
     public int getCurLoad() {
         return curLoad;
@@ -50,7 +52,7 @@ public class Train extends GUIObject {
         int id = trainNumber;
         setCurLoad(0);
         setPos(0);
-        ArrayList<Station> stations = Route.getStations();
+        stations = Route.getStations();
     }
 
     /**
@@ -61,25 +63,27 @@ public class Train extends GUIObject {
         /*
       The max speed when capacity is not exceeded in meters per second
      */
-        double BASE_MAX_SPEED = 24;
+        double BASE_MAX_SPEED = 24.3;
         return BASE_MAX_SPEED - (CRUSH_CAPACITY - CAPACITY)/30;
     }
 
-    public double distanceToNextStation()
+    public void arriveAtNextStation(){
 
-    public double distanceToStation()
+    }
 
-    public double distanceToTerminus()
+    public double distanceToNextStation(){
 
-    public int timeToStation()
+    }
 
+    public double distanceToStation(){
 
+    }
 
+    public double distanceToTerminus(){
 
+    }
 
+    public int timeToStation(){
 
-
-
-
-
+    }
 }
