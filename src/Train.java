@@ -28,4 +28,9 @@ public class Train extends GUIObject {
      */
     private final static int MAX_DECEL = 2;
 
+    /**
+     * The current passenger load
+     */
+    private int curLoad;
+
 }
