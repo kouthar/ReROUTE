@@ -1,54 +1,39 @@
 public class Person {
 
-	  private String personName, stationBoardedName, stationAlightedName;
-	  private int stationBoardedId, stationAlightedId, trainId;
+	  private String name;
+	  private int id;
 	  private Train train;
 	  private Station station;
 	  
-	  public void setStationNameBoarded(String stationName, int stationBoardedID){
+	  public void setStationBoarded(Station station){
 		   this.station = station;
-		   stationBoardedID = stationBoardedID;
-		   stationName = stationBoardedName;
-		   stationBoardedID = station.getstationBoardedID();
-		   stationName = station.getStationName();
-		   
 	  }
 	  
-	  public void setStationNameAlighted(String stationName, int stationAlightedID){
-		   this.station = station;
-		   stationAlightedID = stationAlightedId;
-		   stationName = stationAlightedId;
-		   stationAlightedID = station.getstationAlightedID();
-		   stationName = station.getStationName();
-		   
+	  public Station getStationBoarded(){
+	    return station;
 	  }
 	  
-	  public String getStationBoardedName(){
-		  return stationBoardedName;
-	  }
-	  
-	  public int getStationBoardedID() {
-		  return stationBoardedId;
-	  }
-	  
-	  public String getStationAlightedName() {
-		  return stationAlightedName;
-	  }
-	  
-	  public int getStationAlightedID() {
-		  return stationAlightedId;
-	  }
-	
-	 
-	 
-	 public void setTrain(int trainID){
-		 this.train = train;
-		 trainID = trainId;
-		 trainID = train.getTrainID();
-		
-	 }	  
-	 
-	 public int getTrain(){
-		return trainId;
+	 public void setTrainAlighted(Station station){
+	   this.station = station;
 	 }
-}
+	  
+	 public Station getStationAlighted(){
+	   return station;
+	 }
+	 
+	 public void setTrain(Train train) {
+		 this.train = train;
+	 }
+	 
+	 public Train getTrain() {
+		 return train;
+	 }
+	 
+	 public void setName(String name) {
+		 this.name = name;
+	 }
+	 
+	 public String getName() {
+		 return name;
+	 }
+	}
