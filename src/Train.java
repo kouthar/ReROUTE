@@ -47,6 +47,8 @@ public class Train extends GUIObject {
      */
     private int curLoad;
 
+    private int curSpeed;
+
     public Train(){
         trainNumber++;
         int id = trainNumber;
@@ -72,18 +74,18 @@ public class Train extends GUIObject {
     }
 
     public double distanceToNextStation(){
-
+        return super.distanceTo(stations.get(0));
     }
 
-    public double distanceToStation(){
-
+    public double distanceToStation(station s){
+        return super.distanceTo(s);
     }
 
     public double distanceToTerminus(){
-
+        return super.distanceTo(stations.get(stations.size() - 1));
     }
 
-    public int timeToStation(){
-
+    public int timeToNextStation(){
+        distanceToNextStation() /
     }
 }
