@@ -1,5 +1,6 @@
 public class Train extends GUIObject {
 
+    private static int trainNumber = 0;
     private int id;
 
     /**
@@ -13,18 +14,18 @@ public class Train extends GUIObject {
     private final static int CRUSH_CAPACITY = 1800;
 
     /**
-     * The max speed when capacity is not exceeded
+     * The max speed when capacity is not exceeded in meters per second
      */
-    private int baseMaxSpeed;
+    private final int BASE_MAX_SPEED = 24;
 
     /**
-     * The maximum acceleration
+     * The maximum acceleration in meters per second squared
      */
-    private final int maxAccel;
+    private final static int MAX_ACCEL = 1;
 
     /**
-     * The maximum deceleration
+     * The maximum deceleration in meters per second squared
      */
-    private final int maxDecel;
+    private final static int MAX_DECEL = 2;
 
 }
