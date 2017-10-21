@@ -1,7 +1,7 @@
 public class GUIObject {
     private double pos;
 
-    /*
+    /**
     * Creates a GUIObject object at position 0.*/
     public GUIObject() {
         pos = 0;
@@ -16,16 +16,26 @@ public class GUIObject {
         this.pos = pos;
     }
 
+    /**
+    * Returns the position of this GUIObject.
+    *
+    * @return the position this object.
+    * */
     public double getPos() {
         return pos;
     }
 
+
+    /**
+     * Set the position of this GUIObject.
+     *
+     * @param pos the position to set this object to. */
     public void setPos(double pos) {
         this.pos = pos;
     }
 
     /**
-     * Return the distance from this object to other.
+     * Returns the distance from this object to other.
      *
      * @param other the other GUIObject.
      * @return      the distance from this object to other.
@@ -34,6 +44,15 @@ public class GUIObject {
         return this.pos - other.pos;
     }
 
+    /**
+     * Returns the horizontal coordinate of this object.
+     *
+     * @return the horizontal coordiante of this object.*/
     public double getX(){return 0;}
+
+    /**
+     * Returns the vertical coordinate of this object.
+     *
+     * @return the vertical coordiante of this object.*/
     public double getY(){return 0;}
 }
