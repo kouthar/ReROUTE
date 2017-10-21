@@ -22,9 +22,9 @@ Fields
 - Station nextStation: the next station the train is heading towards DONE
 Methods
 + accessors & mutators
-+ double distanceToStation(): returns the distance to the next station
-+ double distanceToTerminus(): returns the distance to the terminal station
-+ int timeToStation(): returns the time, in seconds, to the next station
++ double distanceToStation(): returns the distance to the next station DONE
++ double distanceToTerminus(): returns the distance to the terminal station DONE
++ int timeToStation(): returns the time, in seconds, to the next station DONE
 
 
 # Station (extends GUIObject)
