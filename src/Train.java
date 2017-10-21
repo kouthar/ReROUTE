@@ -1,7 +1,14 @@
 public class Train extends GUIObject {
 
+    public static int getTrainNumber() {
+        return trainNumber;
+    }
+
+    public static void setTrainNumber(int trainNumber) {
+        Train.trainNumber = trainNumber;
+    }
+
     private static int trainNumber = 0;
-    private int id;
 
     /**
      * The safe train capacity
@@ -43,9 +50,11 @@ public class Train extends GUIObject {
 
     public Train(){
         trainNumber++;
-        id = trainNumber;
+        int id = trainNumber;
         setCurLoad(0);
         setPos(0)
     }
+
+
 
 }
