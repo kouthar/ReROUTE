@@ -25,7 +25,7 @@ public class Station extends GUIObject {
             outflowRange[0] = Integer.parseInt(outflow[0]);
             outflowRange[1] = Integer.parseInt(outflow[1]);
             nextStation = new Station(in.readLine(), this);
-            
+
         }catch(Exception ex){
             ex.printStackTrace();
         }
