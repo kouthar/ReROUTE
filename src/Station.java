@@ -14,6 +14,9 @@ public class Station extends GUIObject {
     public Station getPreviousStation(){
         return previousStation;
     }
+    public String getName(){
+        return name;
+    }
 
     public Station(){
     }
@@ -31,16 +34,15 @@ public class Station extends GUIObject {
             String[] outflow = in.readLine().split(", ");
             outflowRange[0] = Integer.parseInt(outflow[0]);
             outflowRange[1] = Integer.parseInt(outflow[1]);
-            if(getPos() != 0)
-                nextStation = new Station(in.readLine(), this);
-            else
+            String next = in.readLine();
+            if(next.equals("null"))
                 nextStation = null;
+            else
+                nextStation = new Station(next, this);
             this.previousStation = previousStation;
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-
     }
 }

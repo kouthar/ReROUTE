@@ -34,27 +34,14 @@ public class Route{
         return stations;
     }
 
-    public ArrayList<Station> getStationArrayList(){
-        //returns an ArrayList of all the stations on this route
-        ArrayList<Station> stationsAL = new ArrayList<>();
-        for(int i = 0; i < stations.length; i++){
-            stationsAL.add(stations[i]);
-        }
-
-        for (int i = stations.length - 2; i >=0; i--){
-            stationsAL.add(stations[i]);
-        }
-
-        return stationsAL;
-    }
-
     public double getStoppingDistance(Train train) {
         //calculates train's stopping distance based on the train in front and the station in front
         //call train.distanceToNextStation & distanceToTrainInFront(train)
         if (train.distanceToNextStation() < distanceToTrainInFront(train)){
-
+            return train.getCurSpeed() * train.getCurSpeed() / (2 * Train.DECEL);
+        }else{
+            return 150;
         }
-        return 0;
     }
 
     public double distanceToTrainInFront(Train train){
@@ -70,6 +57,16 @@ public class Route{
         return fleet.get(catcher + 1).distanceTo(train);
     }
 
+    private ArrayList<Station> getStationArrayList(){
+        //returns an ArrayList of all the stations on this route
+        ArrayList<Station> stationsAL = new ArrayList<>();
+        for(int i = 0; i < stations.length; i++){
+            stationsAL.add(stations[i]);
+        }
+
+        return stationsAL;
+    }
+
     public void runTrains(boolean startNew, Depot fromDepot){
         //Setup over one iteration
         if(startNew){
@@ -78,8 +75,5 @@ public class Route{
         for(int i = 0; i < fleet.size(); i++){
             fleet.get(i).go(getStoppingDistance(fleet.get(i)));
         }
-
     }
-
-
 }

@@ -12,22 +12,22 @@ public class Train extends GUIObject {
     /**
      * The safe train capacity
      */
-    private final static int CAPACITY = 1500;
+    public static final int CAPACITY = 1500;
 
     /**
      * The max capacity, will detriment max speed
      */
-    private final static int CRUSH_CAPACITY = 1800;
+    public static final int CRUSH_CAPACITY = 1800;
 
     /**
      * The maximum acceleration in meters per second squared
      */
-    private final static double ACCEL = 0.9;
+    public static final double ACCEL = 0.9;
 
     /**
      * The maximum deceleration in meters per second squared
      */
-    private final static double DECEL = 1.4;
+    public static final double DECEL = 1.4;
 
     /**
      * The current passenger load
@@ -52,6 +52,8 @@ public class Train extends GUIObject {
     public void setCurSpeed(int curSpeed) {
         this.curSpeed = curSpeed;
     }
+
+    public double getCurSpeed(){return this.curSpeed;};
 
     public Train(ArrayList<Station> stationsAL, Depot fromDepot) {
         id = trainNumber;
@@ -168,6 +170,7 @@ public class Train extends GUIObject {
         //if not accelerate, use regular formula
         //redraw train with updated position
         //if decelerate, use formula for distance with acceleration
+
     }
 
     /**
