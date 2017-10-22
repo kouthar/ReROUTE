@@ -1,6 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Station extends GUIObject {
     private String name;
@@ -17,6 +22,8 @@ public class Station extends GUIObject {
     public String getName(){
         return name;
     }
+    Random rand = new Random();
+    public static final int MAX_STOP_TIME = 60;
 
     public Station(){
     }
@@ -46,7 +53,30 @@ public class Station extends GUIObject {
         }
     }
 
-    public int getStopTime(){
-        return 30;
+    private int getInflow(int hourOfDay){
+        int midInflow = (int)((inflowRange[1] - inflowRange[0])/2);
+        // if morning rush (7-9), non-downtown stations will be busier
+        if (hourOfDay <= 9 && hourOfDay >= 7){
+            return ThreadLocalRandom.current().nextInt(midInflow, inflowRange[1] + 1);
+        }else{
+            return ThreadLocalRandom.current().nextInt(inflowRange[0], midInflow + 1);
+        }
+    }
+
+    private int getOutflow(int hourOfDay){
+        int midInflow = (int)((outflowRange[1] - outflowRange[0])/2);
+        // if morning rush (7-9), non-downtown stations will be busier
+        if (hourOfDay <= 9 && hourOfDay >= 7){
+            return ThreadLocalRandom.current().nextInt(midInflow, outflowRange[1] + 1);
+        }else{
+            return ThreadLocalRandom.current().nextInt(outflowRange[0], midInflow + 1);
+        }
+    }
+
+    public int getStopTime(int hourOfDay){
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add((getInflow(hourOfDay) + getOutflow(hourOfDay)) * 2);
+        list.add(MAX_STOP_TIME);
+        return Collections.min(list);
     }
 }
