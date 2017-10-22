@@ -1,26 +1,8 @@
-import java.awt.Rectangle;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javax.swing.text.html.ListView;
-
-import javafx.application.Application;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -53,25 +35,45 @@ public class ReRouteInterface extends Application{
     
     Button buttonLT = new Button("List Trains");
     
-    AnchorPane right = new AnchorPane(buttonLT);
+    AnchorPane right1 = new AnchorPane(buttonLT);
 	
-    right.setBottomAnchor(buttonLT, 600.0);
-    right.setTopAnchor(buttonLT, 0.0);
-    right.setLeftAnchor(buttonLT, 850.0);
-    right.setRightAnchor(buttonLT, 0.0);
+    right1.setBottomAnchor(buttonLT, 655.0);
+    right1.setTopAnchor(buttonLT, 0.0);
+    right1.setLeftAnchor(buttonLT, 850.0);
+    right1.setRightAnchor(buttonLT, 0.0);
     
-    pane.getChildren().add(right);
+    pane.getChildren().add(right1);
     
     Button buttonLS = new Button("List Stations");
-    AnchorPane left = new AnchorPane(buttonLS);
+    AnchorPane right2 = new AnchorPane(buttonLS);
 	
-    left.setBottomAnchor(buttonLT, 400.0);
-    left.setTopAnchor(buttonLT, 200.0);
-    left.setLeftAnchor(buttonLT, 850.0);
-    left.setRightAnchor(buttonLT, 0.0);
+    //spacing to fix
+    right2.setBottomAnchor(buttonLS, 550.0);
+    right2.setTopAnchor(buttonLS, 200.0);
+    right2.setLeftAnchor(buttonLS, 850.0);
+    right2.setRightAnchor(buttonLS, 0.0);
     
-    pane.getChildren().add(left);
+    pane.getChildren().add(right2);
     
+    Slider timeSlider = new Slider();
+    timeSlider.setMin(0);
+    timeSlider.setMax(100);
+    timeSlider.setValue(40);
+    timeSlider.setShowTickLabels(true);
+    timeSlider.setShowTickMarks(true);
+    timeSlider.setMajorTickUnit(50);
+    timeSlider.setMinorTickCount(5);
+    timeSlider.setBlockIncrement(1);
+    
+    AnchorPane right3 = new AnchorPane(timeSlider);
+	
+    //spacing to fix
+    right2.setBottomAnchor(timeSlider,0.0);
+    right2.setTopAnchor(timeSlider, 600.0);
+    right2.setLeftAnchor(timeSlider, 850.0);
+    right2.setRightAnchor(timeSlider, 10.0);
+    
+    pane.getChildren().add(right3);
     
 
     Scene scene = new Scene(pane, 1000, 900);
