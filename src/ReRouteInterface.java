@@ -109,21 +109,21 @@ public class Main extends Application{
     Path path = new Path();
     
     MoveTo move = new MoveTo();
-    move.setX(800.0);
-    move.setY(600.0);
+    move.setX(600.0);
+    move.setY(10.0);
     
     LineTo line = new LineTo();
-    line.setX(800.0);
-    line.setY(10.0);
+    line.setX(600.0);
+    line.setY(600.0);
     
     
     LineTo line2 = new LineTo();
-    line2.setX(600.0);
-    line2.setY(10.0);
+    line2.setX(800.0);
+    line2.setY(600.0);
     
     LineTo line3 = new LineTo();
-    line3.setX(600.0);
-    line3.setY(550.0);
+    line3.setX(800.0);
+    line3.setY(10.0);
     
     path.getElements().addAll(move, line, line2, line3);
     
