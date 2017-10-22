@@ -1,10 +1,22 @@
 import java.util.ArrayList;
 
 public class Route{
+    
     /**
      * Oldest Train (first instantiated) is last item
      */
     private ArrayList<Train> fleet = new ArrayList<Train>();
+    
+    /**
+     * Returns a list of stations that are in the route.
+     *
+     * @param firstStation the name of the first station on the route.
+     * @return a list of stations that are in the route
+     */
+    private Station[] setupStations (String firstStation) {
+        Station first = new Station();
+
+    }
 
     public ArrayList<Station> getStationArrayList(){
         //returns an ArrayList of all the stations on this route
