@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Person {
+public class Passenger {
 
 	  private String name;
 	  private int id;
@@ -15,7 +15,7 @@ public class Person {
 	  	// how to access the text file since it isn't necessarily on my computer
 	  
 	 
-	  public Person(Station stationBoarded, Station stationAlighted) {
+	  public Passenger(Station stationBoarded, Station stationAlighted) {
 		  id = numPeople;
 		  id = numPeople + 1;
 		  this.stationBoarded = stationBoarded;
@@ -53,7 +53,7 @@ public class Person {
 	 public static String randomiseName() {
 		 ArrayList<String> names = new ArrayList<String>();
 		 try {
-			 BufferedReader in = new BufferedReader(new FileReader("res/FirstNames.txt"));
+			 BufferedReader in = new BufferedReader(new FileReader("res/Names.txt"));
 			 String name;
 			 while((name = in.readLine()) != null) {
 				 names.add(name);
