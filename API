@@ -73,14 +73,15 @@ Methods
 
 # Person
 Fields
-- Station stationBoarded: the station where this person boarded
-- Station stationAlighted: the station where this person alighted
-- Train train: the train this person is on
-- String name: this person's name
-- int id: this person's id
+- Station stationBoarded: the station where this person boarded DONE
+- Station stationAlighted: the station where this person alighted DONE
+- Train train: the train this person is on DONE
+- String name: this person's name DONE
+- int id: this person's id DONE
 Methods
-+ accessors & mutators
++ accessors & mutators DONE
 + double getDistanceTravelled: returns the distance this person has travelled so far
++ constructor
 
 
 # Control
@@ -99,5 +100,3 @@ Methods
 - accelerated time for longer period shown
 - using JFrame and Swing
 - sprites of train (scaled down but same dimensions) & passenger (same ratio)
-
-
