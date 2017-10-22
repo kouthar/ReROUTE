@@ -15,8 +15,12 @@ public class Route{
      * @return a list of stations that are in the route
      */
     private Station[] setupStations (String firstStation) {
-        Station first = new Station(FIRSTSTATION);
-        
+        Station cur = new Station(FIRSTSTATION);
+        ArrayList<Station> stations = new ArrayList<Station>();
+        if(cur.getNextStation() != null){
+            
+        }
+        return null;
     }
 
     public ArrayList<Station> getStationArrayList(){
