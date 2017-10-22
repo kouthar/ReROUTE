@@ -2,7 +2,9 @@ import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -12,9 +14,12 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.*;
+import java.util.Collection;
 
 public class ReRouteInterface extends Application implements EventHandler{
+
+
+
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("ReROUTE Simulator");
@@ -56,5 +61,9 @@ public class ReRouteInterface extends Application implements EventHandler{
     public void handle(Event arg0) {
         // TODO Auto-generated method stub
 
+    }
+
+    public static void main(String[] args) {
+        launch();
     }
 }
