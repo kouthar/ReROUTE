@@ -1,9 +1,17 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class Person {
 
 	  private String name;
 	  private int id;
 	  private Train train;
 	  private Station station;
+	  
+	  	// returns an error
+	    FileReader in = new FileReader("/src/FirstNames.txt");
+
+	  BufferedReader reader = new BufferedReader(in);
 	  
 	  public void setStationBoarded(Station station){
 		   this.station = station;
@@ -30,7 +38,11 @@ public class Person {
 	 }
 	 
 	 public void setName(String name) {
-		 this.name = name;
+			 int i = (int) Math.random();
+			 for (int j = 0; j < i; j++) {
+				 this.name = reader.readLine();
+			 }
+			 
 	 }
 	 
 	 public String getName() {
