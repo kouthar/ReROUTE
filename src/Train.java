@@ -7,7 +7,8 @@ public class Train extends GUIObject {
     private ArrayList<Passenger> manifest = new ArrayList<Passenger>();
     private ArrayList<Station> stations = new ArrayList<Station>();
     private Station nextStation;
-    private boolean inStation;
+    private Station inStation;
+    private int inStationTime = 0;
 
     /**
      * The safe train capacity
@@ -63,16 +64,16 @@ public class Train extends GUIObject {
         stations = stationsAL;
         if (fromDepot.getName().equals("Sheppard West")){
             nextStation = stations.get(1);
+            inStation = stations.get(0);
             stations.remove(0);
-            inStation = true;
         }else{
             int index = stations.indexOf(fromDepot);
             stations = new ArrayList<>(stations.subList(index+1, stations.size()));
             index = stations.indexOf(fromDepot);
             stations = new ArrayList<>(stations.subList(index+1, stations.size()));
             nextStation = stations.get(1);
+            inStation = stations.get(0);
             stations.remove(0);
-            inStation = true;
         }
     }
 
@@ -163,14 +164,34 @@ public class Train extends GUIObject {
      *
      * @param stoppingDistance the distance between the train and the closest train or station.
      */
-    public void go(double stoppingDistance) {
-        //DECIDES WHETHER TO ACCELERATE OR DECELERATE BASED ON STOPPING DISTANCE
-        //if speed == 0, check if in station and call arriveAtStation, otherwise do nothing
-        //If accelerate, use formula for distance with acceleration
-        //if not accelerate, use regular formula
-        //redraw train with updated position
-        //if decelerate, use formula for distance with acceleration
-
+    public void go(double stoppingDistance, double distanceToTrainInFront) {
+        // if train is not in station, proceed as usual
+        if(inStation == null) {
+            if (stoppingDistance == 150){
+                if(distanceToTrainInFront >= stoppingDistance) accelerate();
+                else decelerate();
+            }else{
+                if(distanceToNextStation() >= stoppingDistance) accelerate();
+                else decelerate();
+            }
+        }
+        // if train is in station
+        else{
+            //if train has stopped long enough
+            if(inStationTime >= inStation.getStopTime()){
+                // if the train in front is not too close, proceed & leave the station
+                if(distanceToTrainInFront >= stoppingDistance){
+                    accelerate();
+                    inStation = null;
+                    inStationTime = 0;
+                }
+                // if the train in front is too close, do nothing
+            }
+            //if train has not stopped long enough, increment the timer
+            else{
+                inStationTime += 1;
+            }
+        }
     }
 
     /**
@@ -179,6 +200,8 @@ public class Train extends GUIObject {
     private void arriveAtStation() {
         //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
         assert(abs(distanceTo(nextStation)) < 1.4);
+
+
     }
 
     public boolean equals(Train other) {

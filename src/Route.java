@@ -73,7 +73,7 @@ public class Route{
             fleet.add(0, new Train(getStationArrayList(), fromDepot));
         }
         for(int i = 0; i < fleet.size(); i++){
-            fleet.get(i).go(getStoppingDistance(fleet.get(i)));
+            fleet.get(i).go(getStoppingDistance(fleet.get(i)), distanceToTrainInFront(fleet.get(i)));
         }
     }
 }

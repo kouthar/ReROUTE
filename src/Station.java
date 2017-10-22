@@ -45,4 +45,8 @@ public class Station extends GUIObject {
             ex.printStackTrace();
         }
     }
+
+    public int getStopTime(){
+        return 30;
+    }
 }
