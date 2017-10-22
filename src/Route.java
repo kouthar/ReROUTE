@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 
 public class Route{
-    
+    private final String FIRSTSTATION;
+
     /**
      * Oldest Train (first instantiated) is last item
      */
     private ArrayList<Train> fleet = new ArrayList<Train>();
-    
+
     /**
      * Returns a list of stations that are in the route.
      *
@@ -14,8 +15,8 @@ public class Route{
      * @return a list of stations that are in the route
      */
     private Station[] setupStations (String firstStation) {
-        Station first = new Station();
-
+        Station first = new Station(FIRSTSTATION);
+        
     }
 
     public ArrayList<Station> getStationArrayList(){
