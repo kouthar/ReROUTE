@@ -53,15 +53,25 @@ public class Train extends GUIObject {
         this.curSpeed = curSpeed;
     }
 
-    public Train(ArrayList<Station> stationsAL) {
+    public Train(ArrayList<Station> stationsAL, Depot fromDepot) {
         id = trainNumber;
         trainNumber++;
         setCurLoad(0);
         setPos(0);
         stations = stationsAL;
-        nextStation = stations.get(1);
-        stations.remove(0);
-        inStation = true;
+        if (fromDepot.getName().equals("Sheppard West")){
+            nextStation = stations.get(1);
+            stations.remove(0);
+            inStation = true;
+        }else{
+            int index = stations.indexOf(fromDepot);
+            stations = new ArrayList<>(stations.subList(index+1, stations.size()));
+            index = stations.indexOf(fromDepot);
+            stations = new ArrayList<>(stations.subList(index+1, stations.size()));
+            nextStation = stations.get(1);
+            stations.remove(0);
+            inStation = true;
+        }
     }
 
     /**
