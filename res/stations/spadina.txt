@@ -1,6 +1,6 @@
-Spadina
+spadina
 7
 -21500
 4, 8
 4, 8
-St. George
+stgeorge

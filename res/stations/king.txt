@@ -1,6 +1,6 @@
-King
+king
 15
 -17700
 4, 9
 4, 9
-Queen
+queen

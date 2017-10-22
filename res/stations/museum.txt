@@ -1,6 +1,6 @@
-Museum
+museum
 9
 -20400
 1, 2
 1, 2
-Queens Park
+queenspark

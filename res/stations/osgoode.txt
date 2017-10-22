@@ -1,6 +1,6 @@
-Osgoode
+osgoode
 12
 -18900
 4, 9
 4, 9
-St. Andrew
+standrew

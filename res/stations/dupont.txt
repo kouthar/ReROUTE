@@ -1,6 +1,6 @@
-Dupont
+dupont
 6
 -22100
 2, 6
 2, 6
-Spadina
+spadina
