@@ -1,5 +1,8 @@
 public class Route{
 
+    /**
+     * Oldest Train (first instantiated) is last item
+     */
     private ArrayList<Train> fleet = new ArrayList<Train>();
 
     public ArrayList<Station> getStationArraylist(){
@@ -15,9 +18,17 @@ public class Route{
         return 0;
     }
 
-
     public double distanceToTrainInFront(Train train){
-        return 
+        //Find the train
+        int i = 0;
+        int catcher = 0;
+        while(i < fleet.size()){
+            if(train.equals(fleet.get(i))){
+                catcher = i;
+            }
+            i++;
+        }
+        return fleet.get(catcher + 1).distanceTo(train);
     }
 
 
