@@ -14,8 +14,6 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.util.Collection;
-
 public class ReRouteInterface extends Application implements EventHandler{
 
 
