@@ -1,8 +1,9 @@
-public class GUIObject{
+public class GUIObject {
     private double pos;
 
     /**
-    * Creates a GUIObject object at position 0.*/
+     * Creates a GUIObject object at position 0.
+     */
     public GUIObject() {
         pos = 0;
     }
@@ -17,10 +18,10 @@ public class GUIObject{
     }
 
     /**
-    * Returns the position of this GUIObject.
-    *
-    * @return the position this object.
-    * */
+     * Returns the position of this GUIObject.
+     *
+     * @return the position this object.
+     */
     public double getPos() {
         return pos;
     }
@@ -30,12 +31,12 @@ public class GUIObject{
      * Sets the position of this GUIObject.
      * Throws IllegalArgumentException if pos not between -30200 and 30200
      *
-     * @param pos the position to set this object to. */
+     * @param pos the position to set this object to.
+     */
     public void setPos(double pos) {
-        if (-30200 <= pos && pos <= 30200){
+        if (-30200 <= pos && pos <= 30200) {
             this.pos = pos;
-        }
-        else{
+        } else {
             throw new IllegalArgumentException("Position must be between -30200 and 30200");
         }
     }
@@ -44,7 +45,7 @@ public class GUIObject{
      * Returns the distance from this object to other.
      *
      * @param other the other GUIObject.
-     * @return      the distance from this object to other.
+     * @return the distance from this object to other.
      */
     public double distanceTo(GUIObject other) {
         return this.pos - other.pos;
@@ -53,22 +54,28 @@ public class GUIObject{
     /**
      * Returns the horizontal coordinate of this object.
      *
-     * @return the horizontal coordiante of this object.*/
-    public double getX(){return 0;}
+     * @return the horizontal coordiante of this object.
+     */
+    public double getX() {
+        return 0;
+    }
 
     /**
      * Returns the vertical coordinate of this object.
      *
-     * @return the vertical coordiante of this object.*/
-    public double getY(){return 0;}
+     * @return the vertical coordiante of this object.
+     */
+    public double getY() {
+        return 0;
+    }
 
 
     /**
      * Returns whether this object is equal to other. Two GUIObjects are equal when they have the same position.
      *
      * @return whether this object is equal to other.
-    */
-    public boolean equals(GUIObject other){
+     */
+    public boolean equals(GUIObject other) {
         return this.pos == other.pos;
     }
 
