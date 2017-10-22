@@ -10,6 +10,7 @@ public class Person {
 	  private Train train;
 	  private Station stationBoarded, stationAlighted;
 	  private static int numPeople = 0;
+	  private GUIObject GUIObject;
 	  
 	  	// how to access the text file since it isn't necessarily on my computer
 	  
@@ -83,12 +84,12 @@ public class Person {
 		 System.out.println(randomiseName());
 	 }
 	 
-	 public int distanceTraveled(Station stationAlighted, Station stationBoarded) {
+	 public double distanceTraveled(Station stationAlighted, Station stationBoarded, GUIObject gui) {
 		 this.stationAlighted = stationAlighted;
 		 this.stationBoarded = stationBoarded;
-		 int pos2 = stationBoarded.getNextStationPos();
-		 int pos1 = stationBoarded.getThisStationPost();
-		 return Math.abs((pos2-pos1));
+		 this.GUIObject = gui;
+		 double pos1 = gui.setPos(stationBoarded.getPos());
+		 return gui.distanceTo(stationAlighted.getPos());
 	 }
 	 
 	
