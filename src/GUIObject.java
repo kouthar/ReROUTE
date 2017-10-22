@@ -1,4 +1,4 @@
-public class GUIObject {
+public abstract class GUIObject {
     private double pos;
 
     /**
@@ -56,18 +56,14 @@ public class GUIObject {
      *
      * @return the horizontal coordiante of this object.
      */
-    public double getX() {
-        return 0;
-    }
+    public abstract double getX() ;
 
     /**
      * Returns the vertical coordinate of this object.
      *
      * @return the vertical coordiante of this object.
      */
-    public double getY() {
-        return 0;
-    }
+    public abstract double getY() ;
 
 
     /**
