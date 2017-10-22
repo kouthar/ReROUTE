@@ -164,7 +164,7 @@ public class Train extends GUIObject {
      *
      * @param stoppingDistance the distance between the train and the closest train or station.
      */
-    public void go(double stoppingDistance, double distanceToTrainInFront) {
+    public void go(int hourOfDay, double stoppingDistance, double distanceToTrainInFront) {
         // if train is not in station, proceed as usual
         if(inStation == null) {
             if (stoppingDistance == 150){
@@ -178,7 +178,7 @@ public class Train extends GUIObject {
         // if train is in station
         else{
             //if train has stopped long enough
-            if(inStationTime >= inStation.getStopTime()){
+            if(inStationTime >= inStation.getStopTime(hourOfDay)){
                 // if the train in front is not too close, proceed & leave the station
                 if(distanceToTrainInFront >= stoppingDistance){
                     accelerate();
@@ -206,5 +206,10 @@ public class Train extends GUIObject {
 
     public boolean equals(Train other) {
         return this.getPos() == other.getPos() && id == other.id;
+    }
+
+    public int getX(){}
+    public int getY(){
+        
     }
 }

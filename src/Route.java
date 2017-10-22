@@ -67,13 +67,13 @@ public class Route{
         return stationsAL;
     }
 
-    public void runTrains(boolean startNew, Depot fromDepot){
+    public void runTrains(int hourOfDay, boolean startNew, Depot fromDepot){
         //Setup over one iteration
         if(startNew){
             fleet.add(0, new Train(getStationArrayList(), fromDepot));
         }
         for(int i = 0; i < fleet.size(); i++){
-            fleet.get(i).go(getStoppingDistance(fleet.get(i)), distanceToTrainInFront(fleet.get(i)));
+            fleet.get(i).go(hourOfDay, getStoppingDistance(fleet.get(i)), distanceToTrainInFront(fleet.get(i)));
         }
     }
 }

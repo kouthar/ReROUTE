@@ -1,6 +1,6 @@
-Queens Park
+queenspark
 10
 -19900
 4, 9
 4, 9
-St. Patrick
+stpatrick
