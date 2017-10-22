@@ -67,7 +67,6 @@ public class ReRouteInterface extends Application{
     
     AnchorPane right3 = new AnchorPane(timeSlider);
 	
-    //spacing to fix
     right2.setBottomAnchor(timeSlider,0.0);
     right2.setTopAnchor(timeSlider, 600.0);
     right2.setLeftAnchor(timeSlider, 850.0);
@@ -75,6 +74,21 @@ public class ReRouteInterface extends Application{
     
     pane.getChildren().add(right3);
     
+    Text speedText = new Text("Speed");
+    speedText.setFont(Font.font("Lato", FontWeight.BOLD, 12));
+    speedText.setFill(Color.BLACK);
+    
+    AnchorPane right4 = new AnchorPane(speedText);
+    
+    right4.setBottomAnchor(speedText, 100.0);
+    right4.setLeftAnchor(speedText, 850.0);
+    right4.setTopAnchor(speedText, 600.0);
+    right4.setRightAnchor(speedText, 10.0);
+    
+    pane.getChildren().add(right4);
+    
+    
+	
 
     Scene scene = new Scene(pane, 1000, 900);
     stage.setScene(scene);
