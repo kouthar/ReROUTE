@@ -1,14 +1,19 @@
+
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.LineTo;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Path;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 
 
 
@@ -100,6 +105,24 @@ public class ReRouteInterface extends Application{
     right5.setRightAnchor(passengerText, 10.0);
     
     pane.getChildren().add(right5);
+    
+    Path path = new Path();
+    
+    MoveTo move = new MoveTo();
+    move.setX(0.0f);
+    move.setY(550.0f);
+    
+    LineTo line = new LineTo();
+    line.setX(10.0f);
+    line.setY(10.0f);
+    
+    path.getElements().add(move);
+    path.getElements().add(line);
+    
+    pane.getChildren().add(path);
+    
+    
+ 
     
     Scene scene = new Scene(pane, 1000, 900);
     stage.setScene(scene);
