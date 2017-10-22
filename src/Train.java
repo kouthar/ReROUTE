@@ -78,9 +78,6 @@ public class Train extends GUIObject {
         return BASE_MAX_SPEED - (CRUSH_CAPACITY - CAPACITY) / 30;
     }
 
-    public void arriveAtNextStation() {
-        //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
-    }
 
     /**
      * @return double representing the distance to the next station in meters
@@ -108,7 +105,7 @@ public class Train extends GUIObject {
      * @return int representing the number of seconds until arrival at the next station
      */
     public int timeToNextStation() {
-        return distanceToNextStation() // curSpeed;
+        return (int)(distanceToNextStation() / curSpeed);
     }
 
     /**
@@ -119,13 +116,20 @@ public class Train extends GUIObject {
             if (curSpeed + ACCEL <= this.getMaxSpeed()) {
                 goWithAcceleration(ACCEL);
             } else {
+                setPos(getPos() + curSpeed);
                 curSpeed = this.getMaxSpeed();
             }
+        }else{
+            goWithAcceleration(0);
         }
     }
 
     public void decelerate() {
-        //DECELERATES THE TRAIN
+        if (curSpeed > 0 || curSpeed - ACCEL >= 0) {
+            goWithAcceleration(-ACCEL);
+        }else {
+
+        }
     }
 
     /**
@@ -148,5 +152,8 @@ public class Train extends GUIObject {
         //redraw train with updated position
     }
 
+    public void arriveAtNextStation() {
+        //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
+    }
 
 }
