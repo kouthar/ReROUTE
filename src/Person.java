@@ -83,5 +83,13 @@ public class Person {
 		 System.out.println(randomiseName());
 	 }
 	 
+	 public int distanceTraveled(Station stationAlighted, Station stationBoarded) {
+		 this.stationAlighted = stationAlighted;
+		 this.stationBoarded = stationBoarded;
+		 int pos2 = stationBoarded.getNextStationPos();
+		 int pos1 = stationBoarded.getThisStationPost();
+		 return Math.abs((pos2-pos1));
+	 }
+	 
 	
 	}
