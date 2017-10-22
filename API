@@ -71,16 +71,16 @@ Methods
 + ArrayList<Station> getStationsArrayList(): returns a copy of stations
 
 
-# Person
+# Passenger
 Fields
-- Station stationBoarded: the station where this person boarded DONE
-- Station stationAlighted: the station where this person alighted DONE
-- Train train: the train this person is on DONE
-- String name: this person's name DONE
-- int id: this person's id DONE
+- Station stationBoarded: the station where this passenger boarded DONE
+- Station stationAlighted: the station where this passenger alighted DONE
+- Train train: the train this passenger is on DONE
+- String name: this passenger's name DONE
+- int id: this passenger's id DONE
 Methods
 + accessors & mutators DONE
-+ double getDistanceTravelled: returns the distance this person has travelled so far DONE
++ double getDistanceTravelled: returns the distance this passenger has travelled so far DONE
 + constructor DONE
 
 
