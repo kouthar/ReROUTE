@@ -53,12 +53,12 @@ public class Train extends GUIObject {
         this.curSpeed = curSpeed;
     }
 
-    public Train() {
+    public Train(ArrayList<Station> stationsAL) {
         id = trainNumber;
         trainNumber++;
         setCurLoad(0);
         setPos(0);
-        stations = Route.getStationsArrayList();
+        stations = stationsAL;
         nextStation = stations.get(1);
         stations.remove(0);
         inStation = true;
