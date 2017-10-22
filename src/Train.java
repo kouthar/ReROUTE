@@ -102,7 +102,7 @@ public class Train extends GUIObject {
      * @return int representing the number of seconds until arrival at the next station
      */
     public int timeToNextStation() {
-        return (int)(distanceToNextStation() / curSpeed);
+        return (int) (distanceToNextStation() / curSpeed);
     }
 
     /**
@@ -116,18 +116,19 @@ public class Train extends GUIObject {
                 setPos(getPos() + curSpeed);
                 curSpeed = this.getMaxSpeed();
             }
-        }else{
+        } else {
             goWithAcceleration(0);
         }
     }
 
     /**
-     * Decelerate until the train reaches a halt. If train in station when halted, arrive at next station. */
+     * Decelerate until the train reaches a halt. If train in station when halted, arrive at next station.
+     */
     public void decelerate() {
         if (curSpeed > 0 || curSpeed - ACCEL >= 0) {
             goWithAcceleration(-ACCEL);
-        }else {
-            if (abs(distanceToNextStation()) < 1.4){
+        } else {
+            if (abs(distanceToNextStation()) < 1.4) {
                 arriveAtStation();
             }
         }
@@ -137,15 +138,16 @@ public class Train extends GUIObject {
      * Updates the train's position and speed with the given acceleration,
      * given 1 second of time.
      */
-    private void goWithAcceleration(double acceleration){
-        setPos(getPos() + curSpeed + 0.5*ACCEL);
+    private void goWithAcceleration(double acceleration) {
+        setPos(getPos() + curSpeed + 0.5 * ACCEL);
         curSpeed += ACCEL;
     }
 
     /**
      * Accelerates or decelerates the train depending on the stopping distance.
      *
-     * @param stoppingDistance the distance between the train and the closest train or station. */
+     * @param stoppingDistance the distance between the train and the closest train or station.
+     */
     public void go(double stoppingDistance) {
         //DECIDES WHETHER TO ACCELERATE OR DECELERATE BASED ON STOPPING DISTANCE
         //if speed == 0, check if in station and call arriveAtStation, otherwise do nothing
@@ -157,13 +159,13 @@ public class Train extends GUIObject {
 
     /**
      * Handles train arrival at a station
-     * */
+     */
     private void arriveAtStation() {
         //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
-        assert();
+        assert ();
     }
 
-    public boolean equals(Train other){
+    public boolean equals(Train other) {
         return this.getPos() == other.getPos() && id == other.id;
     }
 }
