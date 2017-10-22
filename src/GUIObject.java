@@ -1,12 +1,18 @@
 import java.awt.Button;
 
 import javafx.application.Application;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class GUIObject extends Application{
+public class GUIObject extends Application implements EventHandler {
     private double pos;
 
     /**
@@ -78,10 +84,29 @@ public class GUIObject extends Application{
 		
 		VBox vBox = new VBox(10);
 		vBox.setPadding(new Insets(0, 20, 10, 20));
+		//Returns error for some reason
 		vBox.getChildren().addAll(buttonLT, buttonLS);
 		
-		Scene scene = new Scene(vBox, 900, 500);
+		Text vBoxTitle = new Text("Lists");
+		vBoxTitle.setFont(Font.font("Lato", FontWeight.BOLD, 14));
+		vBox.getChildren().add(vBoxTitle);
+		
+		HBox header = new HBox();
+		header.setPadding(new Insets(15, 12, 15, 12));
+	    header.setSpacing(10);
+	    header.setStyle("-fx-background-color: ##19b585;");	
+		Text headerTitle = new Text("ReROUTE Simulator");
+	    headerTitle.setFont(Font.font("Lato", FontWeight.BOLD, 16));
+
+		header.getChildren().add(headerTitle);
+	    Scene scene = new Scene(vBox, 900, 500);
 		
 		stage.setScene(scene);
+	}
+
+	@Override
+	public void handle(Event arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
