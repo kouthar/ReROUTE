@@ -51,12 +51,12 @@ Methods
 
 # Depot (extends Station)
 Fields
-- int storage: number of trains stored at this depot
-- final int capacity: maximum number of trains that can be stored at this depot
+- int storage: number of trains stored at this depot DONE
+- final int capacity: maximum number of trains that can be stored at this depot DONE
 Methods
-+ accessors & mutators
-+ void sendTrain(): updates the storage for a train departure
-+ void receiveTrain(): updates the storage for a train arrival
++ accessors & mutators DONE
++ void sendTrain(): updates the storage for a train departure DONE
++ void receiveTrain(): updates the storage for a train arrival DONE
 
 
 # Route
