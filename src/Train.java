@@ -1,18 +1,10 @@
 import java.util.ArrayList;
 
+import static java.lang.Math.abs;
+
 public class Train extends GUIObject {
-
-    public static int getTrainNumber() {
-        return trainNumber;
-    }
-
-    public static void setTrainNumber(int trainNumber) {
-        Train.trainNumber = trainNumber;
-    }
-
     private static int trainNumber = 0;
-
-    private ArrayList<Person> manifest = new ArrayList<Person>();
+    private ArrayList<Passenger> manifest = new ArrayList<Passenger>();
     private ArrayList<Station> stations = new ArrayList<Station>();
     private Station nextStation;
     private boolean inStation;
@@ -37,6 +29,18 @@ public class Train extends GUIObject {
      */
     private final static double DECEL = 1.4;
 
+    /**
+     * The current passenger load
+     */
+    private int curLoad;
+
+    /**
+     * The current speed
+     */
+    private double curSpeed;
+
+    private int id;
+
     public int getCurLoad() {
         return curLoad;
     }
@@ -45,26 +49,16 @@ public class Train extends GUIObject {
         this.curLoad = curLoad;
     }
 
-    /**
-     * The current passenger load
-     */
-    private int curLoad;
-
     public void setCurSpeed(int curSpeed) {
         this.curSpeed = curSpeed;
     }
 
-    /**
-     * The current speed
-     */
-    private double curSpeed;
-
     public Train() {
+        id = trainNumber;
         trainNumber++;
-        int id = trainNumber;
         setCurLoad(0);
         setPos(0);
-        stations = Route.getStations();
+        stations = Route.getStationsArrayList();
     }
 
     /**
@@ -102,6 +96,9 @@ public class Train extends GUIObject {
     }
 
     /**
+     * Returns the time it takes to get to the next station.
+     * Precondition: there is no train between this train and the next station
+     *
      * @return int representing the number of seconds until arrival at the next station
      */
     public int timeToNextStation() {
@@ -124,36 +121,46 @@ public class Train extends GUIObject {
         }
     }
 
+    /**
+     * Decelerate until the train reaches a halt. If train in station when halted, arrive at next station. */
     public void decelerate() {
         if (curSpeed > 0 || curSpeed - ACCEL >= 0) {
             goWithAcceleration(-ACCEL);
         }else {
-
+            if (abs(distanceToNextStation()) < 1.4){
+                arriveAtStation();
+            }
         }
     }
 
-    /**
+    /*
      * Updates the train's position and speed with the given acceleration,
      * given 1 second of time.
-     *
-     * @param acceleration the acceleration of the train
      */
     private void goWithAcceleration(double acceleration){
         setPos(getPos() + curSpeed + 0.5*ACCEL);
         curSpeed += ACCEL;
     }
 
+    /**
+     * Accelerates or decelerates the train depending on the stopping distance.
+     *
+     * @param stoppingDistance the distance between the train and the closest train or station. */
     public void go(double stoppingDistance) {
         //DECIDES WHETHER TO ACCELERATE OR DECELERATE BASED ON STOPPING DISTANCE
         //if speed == 0, check if in station and call arriveAtStation, otherwise do nothing
         //If accelerate, use formula for distance with acceleration
         //if not accelerate, use regular formula
-        //if decelerate, use formula for distance with acceleration
         //redraw train with updated position
+        //if decelerate, use formula for distance with acceleration
     }
 
-    public void arriveAtNextStation() {
+    /**
+     * Handles train arrival at a station
+     * */
+    private void arriveAtStation() {
         //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
+        assert()
     }
 
 }
