@@ -1,12 +1,16 @@
 import java.util.ArrayList;
 
 public class Route{
-    private final String FIRSTSTATION;
+    private Station[] stations;
 
     /**
      * Oldest Train (first instantiated) is last item
      */
     private ArrayList<Train> fleet = new ArrayList<Train>();
+
+    public Route(String firstStation){
+        stations = setupStations(firstStation);
+    }
 
     /**
      * Returns a list of stations that are in the route.
@@ -15,16 +19,33 @@ public class Route{
      * @return a list of stations that are in the route
      */
     private Station[] setupStations (String firstStation) {
-        Station cur = new Station(FIRSTSTATION);
-        ArrayList<Station> stations = new ArrayList<Station>();
+        Station cur = new Station(firstStation, null);
+        ArrayList<Station> stationsAL = new ArrayList<Station>();
         if(cur.getNextStation() != null){
-            
+            stationsAL.add(cur);
+            cur = cur.getNextStation();
         }
-        return null;
+        stationsAL.add(cur);
+        Station[] stations = new Station[stationsAL.size()];
+        for(int i = 0; i < stationsAL.size(); i++){
+            stations[i] = stationsAL.get(i);
+        }
+
+        return stations;
     }
 
     public ArrayList<Station> getStationArrayList(){
         //returns an ArrayList of all the stations on this route
+        ArrayList<Station> stationsAL = new ArrayList<>();
+        for(int i = 0; i < stations.length; i++){
+            stationsAL.add(stations[i]);
+        }
+
+        for (int i = stations.length - 2; i >=0; i--){
+            stationsAL.add(stations[i]);
+        }
+
+        return stationsAL;
     }
 
     public double getStoppingDistance(Train train) {
@@ -49,13 +70,13 @@ public class Route{
         return fleet.get(catcher + 1).distanceTo(train);
     }
 
-    public void runTrains(boolean startNew){
+    public void runTrains(boolean startNew, Depot fromDepot){
         //Setup over one iteration
         if(startNew){
-            fleet.add(0, new Train)
+            fleet.add(0, new Train(getStationArrayList(), fromDepot));
         }
         for(int i = 0; i < fleet.size(); i++){
-            fleet.get(i).go();
+            fleet.get(i).go(getStoppingDistance(fleet.get(i)));
         }
 
     }
