@@ -1,69 +1,92 @@
 import javafx.application.Application;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.util.Collection;
 
-public class ReRouteInterface extends Application implements EventHandler{
 
+public class ReRouteInterface extends Application{
 
 
     @Override
-    public void start(Stage stage) throws Exception {
-        stage.setTitle("ReROUTE Simulator");
+    public void start(Stage stage) {
+    	
+    	
+    	Text headerTitle = new Text("ReROUTE Simulator");
+    headerTitle.setFont(Font.font("Lato", FontWeight.BOLD, 40));
+    headerTitle.setFill(Color.BLACK);
+    StackPane pane = new StackPane();
+	
+	AnchorPane top = new AnchorPane(headerTitle);
+	
+    top.setBottomAnchor(headerTitle, 352.0);
+    top.setTopAnchor(headerTitle, 0.0);
+    top.setLeftAnchor(headerTitle, 0.0);
+    top.setRightAnchor(headerTitle, 201.0);
+    
+    pane.getChildren().add(top);
+    
+    Button buttonLT = new Button("List Trains");
+    
+    AnchorPane right1 = new AnchorPane(buttonLT);
+	
+    right1.setBottomAnchor(buttonLT, 655.0);
+    right1.setTopAnchor(buttonLT, 0.0);
+    right1.setLeftAnchor(buttonLT, 850.0);
+    right1.setRightAnchor(buttonLT, 0.0);
+    
+    pane.getChildren().add(right1);
+    
+    Button buttonLS = new Button("List Stations");
+    AnchorPane right2 = new AnchorPane(buttonLS);
+	
+    //spacing to fix
+    right2.setBottomAnchor(buttonLS, 550.0);
+    right2.setTopAnchor(buttonLS, 200.0);
+    right2.setLeftAnchor(buttonLS, 850.0);
+    right2.setRightAnchor(buttonLS, 0.0);
+    
+    pane.getChildren().add(right2);
+    
+    Slider timeSlider = new Slider();
+    timeSlider.setMin(0);
+    timeSlider.setMax(100);
+    timeSlider.setValue(40);
+    timeSlider.setShowTickLabels(true);
+    timeSlider.setShowTickMarks(true);
+    timeSlider.setMajorTickUnit(50);
+    timeSlider.setMinorTickCount(5);
+    timeSlider.setBlockIncrement(1);
+    
+    AnchorPane right3 = new AnchorPane(timeSlider);
+	
+    //spacing to fix
+    right2.setBottomAnchor(timeSlider,0.0);
+    right2.setTopAnchor(timeSlider, 600.0);
+    right2.setLeftAnchor(timeSlider, 850.0);
+    right2.setRightAnchor(timeSlider, 10.0);
+    
+    pane.getChildren().add(right3);
+    
 
-        StackPane rootPane = new StackPane();
-
-        Button buttonLT = new Button("List Trains");
-        Button buttonLS = new Button("List Stations");
-
-        VBox vBox = new VBox(10);
-        vBox.setFillWidth(true);
-        vBox.setPadding(new javafx.geometry.Insets(0, 20, 10, 20));
-        //Returns error for some reason
-        vBox.getChildren().addAll(buttonLT, buttonLS);
-        //how to change VBox background colour?
-
-        Text vBoxTitle = new Text("Lists");
-        vBoxTitle.setFont(javafx.scene.text.Font.font("Lato", FontWeight.BOLD, 14));
-        vBoxTitle.setFill(javafx.scene.paint.Color.WHITE);
-        vBox.getChildren().add(vBoxTitle);
-
-        HBox header = new HBox();
-        header.setPadding(new Insets(15, 12, 15, 12));
-        header.setSpacing(10);
-        header.setStyle("-fx-background-color: ##19b585;");
-        Text headerTitle = new Text("ReROUTE Simulator");
-        headerTitle.setFont(Font.font("Lato", FontWeight.BOLD, 16));
-        headerTitle.setFill(Color.WHITE);
-        header.getChildren().add(headerTitle);
-
-        rootPane.getChildren().addAll(vBox, header);
-        Scene scene = new Scene(rootPane, 900, 500);
-
-
-        stage.setScene(scene);
+    Scene scene = new Scene(pane, 1000, 900);
+    stage.setScene(scene);
+    stage.show();
+  
+    		
     }
 
-    @Override
-    public void handle(Event arg0) {
-        // TODO Auto-generated method stub
-
-    }
-
+    
+    
+    
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
