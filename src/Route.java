@@ -45,9 +45,15 @@ public class Route{
         return fleet.get(catcher + 1).distanceTo(train);
     }
 
-    public void runTrains(){
-        //Setup
-        int startTrain = 0;
+    public void runTrains(boolean startNew){
+        //Setup over one iteration
+        if(startNew){
+            fleet.add(0, new Train)
+        }
+        for(int i = 0; i < fleet.size(); i++){
+            fleet.get(i).go();
+        }
+
     }
 
 
