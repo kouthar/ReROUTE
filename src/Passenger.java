@@ -16,7 +16,7 @@ public class Passenger {
 
     public Passenger(Station stationBoarded, Station stationAlighted) {
         id = numPeople;
-        id = numPeople + 1;
+        numPeople++;
         this.stationBoarded = stationBoarded;
         this.stationAlighted = stationAlighted;
 
