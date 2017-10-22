@@ -207,4 +207,9 @@ public class Train extends GUIObject {
     public boolean equals(Train other) {
         return this.getPos() == other.getPos() && id == other.id;
     }
+
+    public int getX(){}
+    public int getY(){
+        
+    }
 }
