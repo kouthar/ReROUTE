@@ -18,6 +18,7 @@ public class Station extends GUIObject {
             BufferedReader in = new BufferedReader(new FileReader(filename));
             name = in.readLine();
             id = in.readLine();
+            setPos(Double.parseDouble(in.readLine()));
             String[] inflow = in.readLine().split(", ");
             inflowRange[0] = Integer.parseInt(inflow[0]);
             inflowRange[1] = Integer.parseInt(inflow[1]);
