@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 
 
 
-public class ReRouteInterface extends Application{
+public class Main extends Application{
 
 
     @Override
@@ -109,15 +109,23 @@ public class ReRouteInterface extends Application{
     Path path = new Path();
     
     MoveTo move = new MoveTo();
-    move.setX(0.0f);
-    move.setY(550.0f);
+    move.setX(800.0);
+    move.setY(600.0);
     
     LineTo line = new LineTo();
-    line.setX(10.0f);
-    line.setY(10.0f);
+    line.setX(800.0);
+    line.setY(10.0);
     
-    path.getElements().add(move);
-    path.getElements().add(line);
+    
+    LineTo line2 = new LineTo();
+    line2.setX(600.0);
+    line2.setY(10.0);
+    
+    LineTo line3 = new LineTo();
+    line3.setX(600.0);
+    line3.setY(550.0);
+    
+    path.getElements().addAll(move, line, line2, line3);
     
     pane.getChildren().add(path);
     
