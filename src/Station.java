@@ -79,4 +79,36 @@ public class Station extends GUIObject {
         list.add(MAX_STOP_TIME);
         return Collections.min(list);
     }
+
+    public double getX(){
+        if (Math.abs(getPos()) <= 17700){
+            return 446;
+        }
+        if (Math.abs(getPos()) <= 18500){
+            return 422 + (getPos() - 17700)/ 33;
+        }
+        if (Math.abs(getPos()) <= 20900){
+            return 422;
+        }
+        if (Math.abs(getPos()) <= 21500){
+            return 404 + (getPos() - 20900)/ 33;
+        }
+        return 404;
+    }
+
+    public double getY() {
+        if (Math.abs(getPos()) <= 17700) {
+            return (getPos() / 33) + 25;
+        }
+        if (Math.abs(getPos()) > 17700 && Math.abs(getPos()) <= 18500) {
+            return 25;
+        }
+        if (Math.abs(getPos()) > 20900 && Math.abs(getPos()) <= 21500) {
+            return 25 + 103;
+        }
+        if (Math.abs(getPos()) > 18500 && Math.abs(getPos()) <= 20900) {
+            return (getPos() / 33) + 25;
+        }
+        return (getPos() / 33) + 25;
+    }
 }
