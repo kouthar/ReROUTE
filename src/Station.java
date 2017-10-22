@@ -9,12 +9,12 @@ public class Station extends GUIObject {
     private int[] outflowRange = new int[2];
     private Station nextStation, previousStation;
 
-    public Station(){
+    public Station() {
     }
 
-    public Station(String stationName, Station previousStation){
+    public Station(String stationName, Station previousStation) {
         String filename = "/res/stations/" + stationName + ".txt";
-        try{
+        try {
             BufferedReader in = new BufferedReader(new FileReader(filename));
             name = in.readLine();
             id = in.readLine();
@@ -27,7 +27,7 @@ public class Station extends GUIObject {
             outflowRange[1] = Integer.parseInt(outflow[1]);
             nextStation = new Station(in.readLine(), this);
 
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
