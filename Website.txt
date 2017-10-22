@@ -56,20 +56,19 @@ article {
 
 <header>
    <img src="ReROUTE Header.png" alt=ReROUTE width="712" height="150">
-
 </header>
 
 <ul>
-  <li><a class="active" href="#home">About</a></li>
-  <li><a href="#">Applet</a></li>
-  <li><a href="https://github.com/reecemartin/ReROUTE">GitHub</a></li>
-  <li><a href="https://devpost.com/software/reroute-stz7l9">Devpost</a></li>
+  <li><a class="active" href="#home"target="_blank">About</a></li>
+  <li><a href="#Applet">Applet</a></li>
+  <li><a href="https://github.com/reecemartin/ReROUTE"target="_blank">GitHub</a></li>
+  <li><a href="https://devpost.com/software/reroute-stz7l9" target="_blank">Devpost</a></li>
 </ul>
 
 <article>
   <h1 style="font-size:200%;color:rgb(0,201,171);font-family:verdana;"> What is ReROUTE?</h1>
   <p style="color:rgb(255,255,255);font-family:verdana;">ReROUTE is a software used to model & simulate real-life metro, subway, and train systems, with an optimized signal system as well as dynamic traffic control. The system is modeled on real life communications based train control systems (an example from the <a href="https://www.youtube.com/watch?v=Mjx3S3UjmnA" style="color:rgb(255,255,255);">New York Subway</a>) and inspired by the <a href="https://www.youtube.com/watch?v=yJlsSQBhKgE" style="color:rgb(255,255,255);">ongoing upgrade of the Toronto Transit Commissions Line 1 Signal Upgrades</a>. Our first route to be modeled will as such be TTC Line 1.</p>
-  <p style="color:rgb(255,255,255);font-family:verdana;">ReROUTING" to an autonomous future.</p>
+  <p style="color:rgb(255,255,255);font-family:verdana;">"ReROUTING" to an autonomous future.</p>
 </article>
 
 <article>
