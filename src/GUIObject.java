@@ -1,4 +1,12 @@
-public class GUIObject {
+import java.awt.Button;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class GUIObject extends Application{
     private double pos;
 
     /**
@@ -61,4 +69,19 @@ public class GUIObject {
      *
      * @return the vertical coordiante of this object.*/
     public double getY(){return 0;}
+
+	@Override
+	public void start(Stage stage) throws Exception {
+		stage.setTitle("ReROUTE Simulator");
+		Button buttonLT = new Button("List Trains");
+		Button buttonLS = new Button("List Stations");
+		
+		VBox vBox = new VBox(10);
+		vBox.setPadding(new Insets(0, 20, 10, 20));
+		vBox.getChildren().addAll(buttonLT, buttonLS);
+		
+		Scene scene = new Scene(vBox, 900, 500);
+		
+		stage.setScene(scene);
+	}
 }
