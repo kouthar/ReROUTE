@@ -6,7 +6,7 @@ public class Route{
      */
     private ArrayList<Train> fleet = new ArrayList<Train>();
 
-    public ArrayList<Station> getStationArraylist(){
+    public ArrayList<Station> getStationArrayList(){
         //returns an ArrayList of all the stations on this route
     }
 
