@@ -11,7 +11,7 @@ Methods
 + GUI stuff
 
 
-# Train (extends GUIObject)
+# Train (extends GUIObject) DONE
 Fields
 - static final double ACCELERATION: the acceleration of trains DONE
 + double pos: position of the object, from -30200 to 30200
@@ -19,12 +19,12 @@ Fields
 - int capacity: maximum capacity of this train (with potential to exceed capacity with detriment to speed) DONE
 - int numPassengers: number of passengers onboard DONE
 - double speed: speed of this train right now DONE
-- Station nextStation: the next station the train is heading towards DONE
+- Station nextStation: the next station the train is heading towards
 Methods
 + accessors & mutators
-+ double distanceToStation(): returns the distance to the next station
-+ double distanceToTerminus(): returns the distance to the terminal station
-+ int timeToStation(): returns the time, in seconds, to the next station
++ double distanceToStation(): returns the distance to the next station DONE
++ double distanceToTerminus(): returns the distance to the terminal station DONE
++ int timeToStation(): returns the time, in seconds, to the next station DONE
 
 
 # Station (extends GUIObject)
@@ -68,7 +68,7 @@ Methods
 + Station getNextStation(Train train): returns the next station on the route
 + Station getPreviousStation(Train train): returns the last station on the route
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
-+ ArrayList<Station> getStationsArrayList()
++ ArrayList<Station> getStationsArrayList(): returns a copy of stations
 
 
 # Person
@@ -99,4 +99,5 @@ Methods
 - accelerated time for longer period shown
 - using JFrame and Swing
 - sprites of train (scaled down but same dimensions) & passenger (same ratio)
+
 

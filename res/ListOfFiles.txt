@@ -1,0 +1,6 @@
+This is a file containing a list of all text files in ref. Some files are templates for other files. 
+
+# lastNames.txt
+# firstNames.txt
+# /stations
+	* this folder contains all the text files representing the stations of the train route. 

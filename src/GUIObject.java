@@ -13,7 +13,7 @@ public class GUIObject {
      * @param pos the position to create the object at
      */
     public GUIObject(double pos) {
-        this.pos = pos;
+        setPos(pos);
     }
 
     /**
@@ -27,11 +27,17 @@ public class GUIObject {
 
 
     /**
-     * Set the position of this GUIObject.
+     * Sets the position of this GUIObject.
+     * Throws IllegalArgumentException if pos not between -30200 and 30200
      *
      * @param pos the position to set this object to. */
     public void setPos(double pos) {
-        this.pos = pos;
+        if (-30200 <= pos && pos <= 30200){
+            this.pos = pos;
+        }
+        else{
+            throw new IllegalArgumentException("Position must be between -30200 and 30200");
+        }
     }
 
     /**
