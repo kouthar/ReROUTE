@@ -1,4 +1,4 @@
-public class GUIObject {
+public class GUIObject{
     private double pos;
 
     /**
@@ -61,4 +61,14 @@ public class GUIObject {
      *
      * @return the vertical coordiante of this object.*/
     public double getY(){return 0;}
+
+    /**
+     * Returns whether this object is equal to other. Two GUIObjects are equal when they have the same position.
+     *
+     * @return whether this object is equal to other.
+    */
+    public boolean equals(GUIObject other){
+        return this.pos == other.pos;
+    }
+
 }
