@@ -14,40 +14,39 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class ReRouteInterface extends Application implements EventHandler{
-
+public class ReRouteInterface extends Application implements EventHandler {
 
 
     @Override
     public void start(Stage stage) throws Exception {
-    		
-    	
-    		int height = 900;
-    		int width = 900;
-    		
-    		int headerInsetTop = 15;
-    		int headerInsetRight = 12;
-    		int headerInsetBottom = 15;
-    		int headerInsetLeft = 12;
-    		
-    		int LPInsetTop = 0;
-    		int LPInsetRight = 20;
-    		int LPInsetBottom = 10;
-    		int LPInsetLeft = 20;
-    		
-    		int rightPaneX = 0;
-    		int rightPaneY = 0;
+
+
+        int height = 900;
+        int width = 900;
+
+        int headerInsetTop = 15;
+        int headerInsetRight = 12;
+        int headerInsetBottom = 15;
+        int headerInsetLeft = 12;
+
+        int LPInsetTop = 0;
+        int LPInsetRight = 20;
+        int LPInsetBottom = 10;
+        int LPInsetLeft = 20;
+
+        int rightPaneX = 0;
+        int rightPaneY = 0;
         stage.setTitle("ReROUTE Simulator");
 
         StackPane rootPane = new StackPane();
 
         Button buttonLT = new Button("List Trains");
         Button buttonLS = new Button("List Stations");
-        
+
         //Using dummy values for insets for now
-        Pane leftPane  = new Pane();
-        leftPane.setPadding(new javafx.geometry.Insets(LPInsetTop, LPInsetRight, 
-        		LPInsetBottom, LPInsetLeft));
+        Pane leftPane = new Pane();
+        leftPane.setPadding(new javafx.geometry.Insets(LPInsetTop, LPInsetRight,
+                LPInsetBottom, LPInsetLeft));
         //Returns error for some reason
         leftPane.getChildren().addAll(buttonLT, buttonLS);
         //how to change VBox background colour?
@@ -65,7 +64,7 @@ public class ReRouteInterface extends Application implements EventHandler{
         headerTitle.setFont(Font.font("Lato", FontWeight.BOLD, 16));
         headerTitle.setFill(Color.WHITE);
         header.getChildren().add(headerTitle);
-        
+
         //idk if these height/width measurements are correct
         Canvas canvas = new Canvas(width - LPInsetRight, height - headerInsetTop);
         canvas.setLayoutX(rightPaneX);
@@ -73,12 +72,11 @@ public class ReRouteInterface extends Application implements EventHandler{
         //idk if these are correct
         canvas.setHeight(height - headerInsetTop);
         canvas.setWidth(width - LPInsetLeft);
-        
-        StackPane  rightPane = new StackPane();
+
+        StackPane rightPane = new StackPane();
         rightPane.getChildren().add(canvas);
         rightPane.setStyle("-fx-background-color: black");
 
-        
 
         rootPane.getChildren().addAll(leftPane, rightPane, header);
         Scene scene = new Scene(rootPane, width, height);
