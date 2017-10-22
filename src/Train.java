@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Train extends GUIObject {
 
     public static int getTrainNumber() {
