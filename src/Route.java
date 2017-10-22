@@ -32,5 +32,10 @@ public class Route{
         return fleet.get(catcher + 1).distanceTo(train);
     }
 
+    public void runTrains(){
+        //Setup
+        int startTrain
+    }
+
 
 }
