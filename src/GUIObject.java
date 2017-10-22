@@ -62,6 +62,7 @@ public class GUIObject{
      * @return the vertical coordiante of this object.*/
     public double getY(){return 0;}
 
+
     /**
      * Returns whether this object is equal to other. Two GUIObjects are equal when they have the same position.
      *

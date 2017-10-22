@@ -9,6 +9,13 @@ public class Station extends GUIObject {
     private int[] outflowRange = new int[2];
     private Station nextStation, previousStation;
 
+    public Station getNextStation(){
+        return nextStation;
+    }
+    public Station getPreviousStation(){
+        return previousStation;
+    }
+
     public Station(){
     }
 
@@ -25,7 +32,11 @@ public class Station extends GUIObject {
             String[] outflow = in.readLine().split(", ");
             outflowRange[0] = Integer.parseInt(outflow[0]);
             outflowRange[1] = Integer.parseInt(outflow[1]);
-            nextStation = new Station(in.readLine(), this);
+            if(getPos() != 0)
+                nextStation = new Station(in.readLine(), this);
+            else
+                nextStation = null;
+            this.previousStation = previousStation;
 
         }catch(Exception ex){
             ex.printStackTrace();

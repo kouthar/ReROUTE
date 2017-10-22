@@ -59,6 +59,9 @@ public class Train extends GUIObject {
         setCurLoad(0);
         setPos(0);
         stations = Route.getStationsArrayList();
+        nextStation = stations.get(1);
+        stations.remove(0);
+        inStation = true;
     }
 
     /**
@@ -160,7 +163,7 @@ public class Train extends GUIObject {
      * */
     private void arriveAtStation() {
         //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
-        assert();
+        assert(abs(distanceTo(nextStation)) < 1.4);
     }
 
     public boolean equals(Train other){
