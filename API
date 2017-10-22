@@ -80,8 +80,8 @@ Fields
 - int id: this person's id DONE
 Methods
 + accessors & mutators DONE
-+ double getDistanceTravelled: returns the distance this person has travelled so far
-+ constructor
++ double getDistanceTravelled: returns the distance this person has travelled so far DONE
++ constructor DONE
 
 
 # Control
