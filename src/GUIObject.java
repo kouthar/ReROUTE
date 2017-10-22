@@ -6,7 +6,9 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -79,16 +81,22 @@ public class GUIObject extends Application implements EventHandler {
 	@Override
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("ReROUTE Simulator");
+		
+		StackPane rootPane = new StackPane();
+		
 		Button buttonLT = new Button("List Trains");
 		Button buttonLS = new Button("List Stations");
 		
 		VBox vBox = new VBox(10);
+		vBox.setFillWidth(true);
 		vBox.setPadding(new Insets(0, 20, 10, 20));
 		//Returns error for some reason
 		vBox.getChildren().addAll(buttonLT, buttonLS);
+		//how to change VBox background colour?
 		
 		Text vBoxTitle = new Text("Lists");
 		vBoxTitle.setFont(Font.font("Lato", FontWeight.BOLD, 14));
+		vBoxTitle.setFill(Color.WHITE);
 		vBox.getChildren().add(vBoxTitle);
 		
 		HBox header = new HBox();
@@ -97,9 +105,12 @@ public class GUIObject extends Application implements EventHandler {
 	    header.setStyle("-fx-background-color: ##19b585;");	
 		Text headerTitle = new Text("ReROUTE Simulator");
 	    headerTitle.setFont(Font.font("Lato", FontWeight.BOLD, 16));
-
+	    headerTitle.setFill(Color.WHITE);
 		header.getChildren().add(headerTitle);
-	    Scene scene = new Scene(vBox, 900, 500);
+		
+		rootPane.getChildren().addAll(vBox, header);
+	    Scene scene = new Scene(rootPane, 900, 500);
+	    
 		
 		stage.setScene(scene);
 	}
