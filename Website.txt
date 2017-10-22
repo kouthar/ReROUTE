@@ -59,10 +59,10 @@ article {
 </header>
 
 <ul>
-  <li><a class="active" href="#home"target="_blank">About</a></li>
-  <li><a href="#Applet">Applet</a></li>
-  <li><a href="https://github.com/reecemartin/ReROUTE"target="_blank">GitHub</a></li>
-  <li><a href="https://devpost.com/software/reroute-stz7l9" target="_blank">Devpost</a></li>
+  <li style="font-family:verdana;"><a class="active" href="#home"target="_blank">About</a></li>
+  <li style="font-family:verdana;"><a href="#Applet">Applet</a></li>
+  <li style="font-family:verdana;"><a href="https://github.com/reecemartin/ReROUTE"target="_blank">GitHub</a></li>
+  <li style="font-family:verdana;"><a href="https://devpost.com/software/reroute-stz7l9" target="_blank">Devpost</a></li>
 </ul>
 
 <article>
