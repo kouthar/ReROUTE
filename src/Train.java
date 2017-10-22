@@ -160,7 +160,10 @@ public class Train extends GUIObject {
      * */
     private void arriveAtStation() {
         //HANDLES TRAINS ARRIVAL AND CHANGING THE STATIONS ARRAYLIST ETC
-        assert()
+        assert();
     }
 
+    public boolean equals(Train other){
+        return this.getPos() == other.getPos() && id == other.id;
+    }
 }
