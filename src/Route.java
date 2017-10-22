@@ -46,7 +46,7 @@ public class Route{
 
     public void runTrains(){
         //Setup
-        int startTrain
+        int startTrain = 0;
     }
 
 
