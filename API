@@ -1,13 +1,17 @@
 Features
 
-# Coordinate (interface)
+# GUIObject
 Fields
-+ double pos: position of the object, from -30200 to 30200
+- double pos: position of the object, from -30200 to 30200 DONE
 Methods
-+ double distanceTo(Coordinate other): return the distance from this object to other
++ accessors & mutators
++ double getX(): return the horizontal coordinate in the GUI
++ double getY(): return the vertical coordinate in the GUI
++ double distanceTo(GUIObject other): return the distance from this object to other DONE
++ GUI stuff
 
 
-# Train (implements Coordinate)
+# Train (extends GUIObject) DONE
 Fields
 - static final double ACCELERATION: the acceleration of trains DONE
 + double pos: position of the object, from -30200 to 30200
@@ -18,12 +22,12 @@ Fields
 - Station nextStation: the next station the train is heading towards
 Methods
 + accessors & mutators
-+ double distanceToStation(): returns the distance to the next station
-+ double distanceToTerminus(): returns the distance to the terminal station
-+ int timeToStation(): returns the time, in seconds, to the next station
++ double distanceToStation(): returns the distance to the next station DONE
++ double distanceToTerminus(): returns the distance to the terminal station DONE
++ int timeToStation(): returns the time, in seconds, to the next station DONE
 
 
-# Station (implements Coordinate)
+# Station (extends GUIObject)
 Fields
 + double pos: position of the object, from -30200 to 30200
 - int[] inflowRange: the minimum and maximum inflow
@@ -47,12 +51,12 @@ Methods
 
 # Depot (extends Station)
 Fields
-- int storage: number of trains stored at this depot
-- final int capacity: maximum number of trains that can be stored at this depot
+- int storage: number of trains stored at this depot DONE
+- final int capacity: maximum number of trains that can be stored at this depot DONE
 Methods
-+ accessors & mutators
-+ void sendTrain(): updates the storage for a train departure
-+ void receiveTrain(): updates the storage for a train arrival
++ accessors & mutators DONE
++ void sendTrain(): updates the storage for a train departure DONE
++ void receiveTrain(): updates the storage for a train arrival DONE
 
 
 # Route
@@ -64,18 +68,20 @@ Methods
 + Station getNextStation(Train train): returns the next station on the route
 + Station getPreviousStation(Train train): returns the last station on the route
 - get - distanceTraveled, time, ETA, schedule, distanceToStation
++ ArrayList<Station> getStationsArrayList(): returns a copy of stations
 
 
-# Person (implements Coordinate)
+# Passenger
 Fields
-- Station stationBoarded: the station where this person boarded
-- Station stationAlighted: the station where this person alighted
-- Train train: the train this person is on
-- String name: this person's name
-- int id: this person's id
+- Station stationBoarded: the station where this passenger boarded DONE
+- Station stationAlighted: the station where this passenger alighted DONE
+- Train train: the train this passenger is on DONE
+- String name: this passenger's name DONE
+- int id: this passenger's id DONE
 Methods
-+ accessors & mutators
-+ double getDistanceTravelled: returns the distance this person has travelled so far
++ accessors & mutators DONE
++ double getDistanceTravelled: returns the distance this passenger has travelled so far DONE
++ constructor DONE
 
 
 # Control
@@ -85,10 +91,12 @@ Methods
 + void main(String[] args)
 
 
-# GUI 
+# Simulation
+- class for train system simulation
+
+
+# ReRouteInterface
 - animated representation of trains and the ATC model
 - accelerated time for longer period shown
 - using JFrame and Swing
 - sprites of train (scaled down but same dimensions) & passenger (same ratio)
-
-

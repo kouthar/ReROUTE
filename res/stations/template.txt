@@ -1,0 +1,6 @@
+station name
+station id
+position
+min inflow, max inflow
+min outflow, max outflow
+next station name

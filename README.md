@@ -6,9 +6,10 @@ Welcome to ReROUTE! This is a software used to model & simulate real-life metro,
 This is a project intended for THacks 2.
 
 # What it does
-ReROUTE is an automated train system. Its purpose is to communicate and manage trains to avoid dangerous encounters, while also reaching destinations and moving passengers in the most efficient manner possible. ReROUTE ensures that passengers arrive at their station swiftly and safely, guaranteeing an on-time arrival. 
+ReROUTE is an open source automated train system. Its purpose is to communicate and manage trains to avoid dangerous encounters, while also reaching destinations and moving passengers in the most efficient manner possible. ReROUTE ensures that passengers arrive at their station swiftly and safely, guaranteeing an on-time arrival. 
 
 # How it works
+Utlilzing classes for passenger, train, station, terminus, route, and depot, all aspects of a train system send information to each other about current situations. They cooridnate variables to perform the duties of a subway operator, but with a higher degree of accuracy and precision. A graphical user interface depicts the general behaviour of the Toronto subway system with this autonomous software integrated. 
 
 # Development Plan
 Features we intend to add:
